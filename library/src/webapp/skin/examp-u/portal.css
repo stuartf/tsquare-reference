@@ -71,6 +71,10 @@ body{
 	border-top: 1px solid #004D73;
 	text-align: center;
 }
+#footerLinks{
+    margin:0;
+    padding:0;
+}
 #footerLinks li{
 	margin:0;
 	border-right:1px solid #ccc;
