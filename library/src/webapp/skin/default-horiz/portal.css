@@ -436,9 +436,6 @@ display:none*/
 set of special selectors when a user has chosen to minimize navigation and maximize real
 page estate
 */
-#toggleToolMenu, #toggleToolMenu:visited,#toggleToolMenu:active,#toggleToolMenu:focus{
-	outline:none;
-}
 #toggleToolMax, #toggleNormal{
 	height:16px;
 	border:1px solid #fff;
