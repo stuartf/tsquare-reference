@@ -20,6 +20,10 @@ update SAM_PUBLISHEDFEEDBACK_T set FEEDBACKCOMPONENTOPTION = 2;
 alter table SAM_ASSESSMENTGRADING_T add LASTVISITEDPART integer default null;
 alter table SAM_ASSESSMENTGRADING_T add LASTVISITEDQUESTION integer default null;
 
+-- SAM-775
+-- If you get an error when running this script, you will need to clean the duplicates first. Please refer to SAM-775.
+create unique index ASSESSMENTGRADINGID on SAM_ITEMGRADING_T (ASSESSMENTGRADINGID, PUBLISHEDITEMID, PUBLISHEDITEMTEXTID, AGENTID, PUBLISHEDANSWERID);
+
 -- Gradebook2 support
 -- SAK-19080 / GRBK-736
 alter table GB_GRADE_RECORD_T add USER_ENTERED_GRADE varchar(127);
