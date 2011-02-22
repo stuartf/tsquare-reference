@@ -267,6 +267,16 @@ create sequence URL_RANDOMISED_MAPPINGS_S;
 
 -- ShortenedUrlService 1.0.0 db creation end
 
+-- SAK-19951 added create statement for scheduler_trigger_events
+create table scheduler_trigger_events (
+    uuid varchar2(36 char) not null, 
+    eventType varchar2(255 char) not null, 
+    jobName varchar2(255 char) not null, 
+    triggerName varchar2(255 char), 
+    eventTime timestamp not null, 
+    message clob, 
+    primary key (uuid));
+
 -- STAT-241: Tracking of time spent in site
 create table SST_PRESENCES (
 	ID number(19,0) not null,
