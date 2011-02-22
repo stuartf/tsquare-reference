@@ -267,7 +267,7 @@ create sequence URL_RANDOMISED_MAPPINGS_S;
 
 -- ShortenedUrlService 1.0.0 db creation end
 
--- SAK-19951 added create statement for scheduler_trigger_events
+-- SAK-18864/SAK-19951/SAK-19965 added create statement for scheduler_trigger_events
 create table scheduler_trigger_events (
     uuid varchar2(36 char) not null, 
     eventType varchar2(255 char) not null, 
@@ -287,6 +287,8 @@ create table SST_PRESENCES (
 	LAST_VISIT_START_TIME timestamp default null,
 	primary key (ID)
 );
+
+-- SAK-20076: missing Sitestats indexes
 create index SST_PRESENCE_DATE_IX on SST_PRESENCES (P_DATE);
 create index SST_PRESENCE_USER_ID_IX on SST_PRESENCES (USER_ID);
 create index SST_PRESENCE_SITE_ID_IX on SST_PRESENCES (SITE_ID);
