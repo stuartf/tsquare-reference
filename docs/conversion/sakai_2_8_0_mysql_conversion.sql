@@ -221,7 +221,7 @@ create index PROFILE_STATUS_DATE_ADDED_I on PROFILE_STATUS_T (DATE_ADDED);
 
 -- Profile2 1.3-1.4 upgrade end
 
--- SAK-18864/SAK-19951/SAK-19965 added create statement for scheduler_trigger_events
+-- SAK-18864/SAK-19951/SAK-19965 adds missing scheduler_trigger_events table for new persistent jobscheduler event feature
 create table scheduler_trigger_events (
     uuid varchar(36) not null, 
     eventType varchar(255) not null, 
@@ -254,7 +254,6 @@ alter table SAM_ASSESSMENTGRADING_T add column LASTVISITEDQUESTION integer defau
 create unique index ASSESSMENTGRADINGID on SAM_ITEMGRADING_T (ASSESSMENTGRADINGID, PUBLISHEDITEMID, PUBLISHEDITEMTEXTID, AGENTID, PUBLISHEDANSWERID);
 
 -- ShortenedUrlService 1.0.0 db creation start
-
 create table URL_RANDOMISED_MAPPINGS_T (
 	ID bigint not null auto_increment,
 	TINY varchar(255) not null,
@@ -264,10 +263,9 @@ create table URL_RANDOMISED_MAPPINGS_T (
 
 create index URL_INDEX on URL_RANDOMISED_MAPPINGS_T (URL);
 create index KEY_INDEX on URL_RANDOMISED_MAPPINGS_T (TINY);
-
 -- ShortenedUrlService 1.0.0 db creation end
 
--- KNL-563: dynamic bundling loading
+-- KNL-563 table structure for sakai_message_bundle
 create table SAKAI_MESSAGE_BUNDLE (
     ID bigint(20) not null auto_increment,
     MODULE_NAME varchar(255) not null,
@@ -278,6 +276,8 @@ create table SAKAI_MESSAGE_BUNDLE (
     DEFAULT_VALUE text not null,
     primary key (ID)
 );
+
+create index SMB_SEARCH on sakai_message_bundle (BASENAME, MODULE_NAME, LOCALE, PROP_NAME); 
 
 -- STAT-241 table structure for sst_presences
 create table SST_PRESENCES (
@@ -296,7 +296,7 @@ create index SST_PRESENCE_USER_ID_IX on SST_PRESENCES (USER_ID);
 create index SST_PRESENCE_SITE_ID_IX on SST_PRESENCES (SITE_ID);
 create index SST_PRESENCE_SUD_ID_IX on SST_PRESENCES (SITE_ID, USER_ID, P_DATE);
 
--- RES-2: table structure for validationaccount_item
+--  RES-2: table structure for validationaccount_item
 create table VALIDATIONACCOUNT_ITEM (
     id bigint(20) not null auto_increment,
     USER_ID varchar(255) not null,
