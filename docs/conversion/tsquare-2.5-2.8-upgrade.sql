@@ -214,38 +214,18 @@ CREATE UNIQUE INDEX EVENT_INDEX ON CALENDAR_EVENT
        EVENT_ID
 );
 
--- SAK-6216 Optional ability to store client hostname (resolved IP) in SAKAI_SESSION
-alter table SAKAI_SESSION add SESSION_HOSTNAME varchar2(255) NULL;
-
--- SAK-10801 Add CONTEXT field to SAKAI_EVENT
-alter table SAKAI_EVENT add CONTEXT varchar2(255) NULL;
 
 -- SAK-13310 Poll description field too small
 alter table POLL_POLL modify POLL_DETAILS VARCHAR2(4000);
-
--- SAK-14106
-alter table SAM_ITEM_T add DISCOUNT float NULL;
-alter table SAM_ANSWER_T add DISCOUNT float NULL;
-alter table SAM_PUBLISHEDITEM_T add DISCOUNT float NULL;
-alter table SAM_PUBLISHEDANSWER_T add DISCOUNT float NULL;
 
 -- SAK-14291
 create index SYLLABUS_ATTACH_ID_I on SAKAI_SYLLABUS_ATTACH (syllabusId);
 create index SYLLABUS_DATA_SURRO_I on SAKAI_SYLLABUS_DATA (surrogateKey);
 
 -- Samigo
--- SAK-8432
-create index SAM_AG_AGENTID_I on SAM_ASSESSMENTGRADING_T (AGENTID);
--- SAK-14430
-ALTER TABLE SAM_ASSESSACCESSCONTROL_T ADD MARKFORREVIEW number(1,0) NULL;
-ALTER TABLE SAM_PUBLISHEDACCESSCONTROL_T ADD MARKFORREVIEW number(1,0) NULL;
--- SAK-14472
-INSERT INTO SAM_TYPE_T ("TYPEID" ,"AUTHORITY", "DOMAIN", "KEYWORD", "DESCRIPTION", "STATUS", "CREATEDBY", "CREATEDDATE", "LASTMODIFIEDBY", "LASTMODIFIEDDATE")
-    VALUES (12 , 'stanford.edu', 'assessment.item', 'Multiple Correct Single Selection', NULL, 1, 1, SYSDATE, 1, SYSDATE);
 -- SAK-14474
 update sam_assessaccesscontrol_t set autosubmit = 0;
 update sam_publishedaccesscontrol_t set autosubmit = 0;
-alter table SAM_ASSESSMENTGRADING_T add ISAUTOSUBMITTED number(1, 0) default '0' null;
 -- SAK-14430 
 INSERT INTO SAM_ASSESSMETADATA_T (ASSESSMENTMETADATAID, ASSESSMENTID, LABEL, ENTRY) VALUES
   (sam_assessMetaData_id_s.nextVal, 1, 'markForReview_isInstructorEditable', 'true');
@@ -260,11 +240,6 @@ INSERT INTO SAM_ASSESSMETADATA_T (ASSESSMENTMETADATAID, ASSESSMENTID, LABEL, ENT
 INSERT INTO SAM_ASSESSMETADATA_T (ASSESSMENTMETADATAID, ASSESSMENTID, LABEL, ENTRY) VALUES
   (sam_assessMetaData_id_s.nextVal, (SELECT ID FROM SAM_ASSESSMENTBASE_T WHERE TITLE='Timed Test' AND TYPEID='142' AND ISTEMPLATE=1), 'markForReview_isInstructorEditable', 'true');
 update SAM_ASSESSACCESSCONTROL_T set MARKFORREVIEW = 1 where ASSESSMENTID = (SELECT ID FROM SAM_ASSESSMENTBASE_T WHERE TITLE='Formative Assessment' AND TYPEID='142' AND ISTEMPLATE=1);
-
--- SAK-13646
-alter table GB_GRADABLE_OBJECT_T add (IS_EXTRA_CREDIT number(1,0), ASSIGNMENT_WEIGHTING double precision);
-alter table GB_CATEGORY_T add (IS_EXTRA_CREDIT number(1,0));
-alter table GB_GRADE_RECORD_T add (IS_EXCLUDED_FROM_GRADE number(1,0));
 
 -- SAK-12883, SAK-12582 - Allow control over which academic sessions are
 -- considered current; support more than one current academic session
@@ -447,11 +422,13 @@ drop table PERMISSIONS_SRC_TEMP;
 -- --- SAK-15040 site.viewRoster is a newly added permission
 
 INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '!site.user'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'maintain'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'site.viewRoster'));
-INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '!site.template'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'maintain'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'site.viewRoster'));
 INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '!site.template.course'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'Instructor'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'site.viewRoster'));
+INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '!site.template.course'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'Head TA'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'site.viewRoster'));
 INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '!group.template'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'maintain'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'site.viewRoster'));
 INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '!group.template.course'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'Instructor'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'site.viewRoster'));
 INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '/site/mercury'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'maintain'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'site.viewRoster'));
+
+INSERT INTO SAKAI_REALM_RL_FN VALUES((select REALM_KEY from SAKAI_REALM where REALM_ID = '!site.template.course'), (select ROLE_KEY from SAKAI_REALM_ROLE where ROLE_NAME = 'Instructor'), (select FUNCTION_KEY from SAKAI_REALM_FUNCTION where FUNCTION_NAME = 'gradebook.publish'));
 
 -- --------------------------------------------------------------------------------------------------------------------------------------
 -- backfill new site.viewRoster permissions into existing realms
@@ -462,9 +439,13 @@ CREATE TABLE PERMISSIONS_SRC_TEMP (ROLE_NAME VARCHAR2(99), FUNCTION_NAME VARCHAR
 
 INSERT INTO PERMISSIONS_SRC_TEMP values ('maintain','site.viewRoster');
 INSERT INTO PERMISSIONS_SRC_TEMP values ('Instructor','site.viewRoster');
+INSERT INTO PERMISSIONS_SRC_TEMP values ('Head TA','site.viewRoster');
 INSERT INTO PERMISSIONS_SRC_TEMP values ('CIG Coordinator','site.viewRoster');
 INSERT INTO PERMISSIONS_SRC_TEMP values ('Program Coordinator','site.viewRoster');
 INSERT INTO PERMISSIONS_SRC_TEMP values ('Program Admin','site.viewRoster');
+
+-- While we're at it, let's backfill this one too
+INSERT INTO PERMISSIONS_SRC_TEMP values ('Instructor','gradebook.publish');
 
 -- lookup the role and function numbers
 CREATE TABLE PERMISSIONS_TEMP (ROLE_KEY INTEGER, FUNCTION_KEY INTEGER);
@@ -813,17 +794,6 @@ CREATE INDEX MAILARCHIVE_SUBJECT_INDEX ON MAILARCHIVE_MESSAGE
         SUBJECT
 );
 
--- SAK-16463 fix
-alter table MAILARCHIVE_MESSAGE modify XML CLOB;
-
--- Note after performing these conversions your indexes may be in an invalid state because of the required clob conversion.
--- You may need to run ths following statement, manually execute the generated 'alter indexes' and re-gather statistics on this table
--- There is a randomly named index so it can not be automated.
-
--- See the 2.6 release notes or SAK-16553 for further details
-
--- select 'alter index '||index_name||' rebuild online;' from user_indexes where status = 'INVALID' or status = 'UNUSABLE'; 
-
 -- SAK-11096 asn.share.drafts is a newly added permission
 
 INSERT INTO SAKAI_REALM_FUNCTION VALUES (SAKAI_REALM_FUNCTION_SEQ.NEXTVAL, 'asn.share.drafts');
@@ -990,9 +960,6 @@ create index SAKAI_PERSON_UID_I on SAKAI_PERSON_T (UID_C);
 -- SAK-16686/KNL-241 Support exceptions to dynamic page localization
 INSERT INTO SAKAI_SITE_PAGE_PROPERTY VALUES ('~admin','~admin-400','sitePage.customTitle','true');
 
--- SAK-16832
-ALTER TABLE SAM_PUBLISHEDASSESSMENT_T ADD LASTNEEDRESUBMITDATE timestamp NULL;
-
 -- SAK-17447
 alter table EMAIL_TEMPLATE_ITEM add HTMLMESSAGE clob; 
 
@@ -1019,42 +986,6 @@ alter table QRTZ_FIRED_TRIGGERS add PRIORITY number(13) NOT NULL;
 -- see http://www.opensymphony.com/quartz/wikidocs/Quartz%201.6.0.html
 update QRTZ_TRIGGERS set PRIORITY = 5 where PRIORITY IS NULL;
 update QRTZ_FIRED_TRIGGERS set PRIORITY = 5 where PRIORITY IS NULL; 
-
--- START SiteStats 2.1 (SAK-17773)
--- IMPORTANT: Installations with previous (contrib) versions of SiteStats deployed should
---            comment out lines below and consult this url for possible conversion upgrades:
---            https://source.sakaiproject.org/svn/sitestats/trunk/updating/
--- NOTE:      There is no DB conversion required from SiteStats 2.0 -> 2.1
-create table SST_EVENTS (ID number(19,0) not null, USER_ID varchar2(99 char) not null, SITE_ID varchar2(99 char) not null, EVENT_ID varchar2(32 char) not null, EVENT_DATE date not null, EVENT_COUNT number(19,0) not null, primary key (ID));
-create table SST_JOB_RUN (ID number(19,0) not null, JOB_START_DATE timestamp, JOB_END_DATE timestamp, START_EVENT_ID number(19,0), END_EVENT_ID number(19,0), LAST_EVENT_DATE timestamp, primary key (ID));
-create table SST_PREFERENCES (ID number(19,0) not null, SITE_ID varchar2(99 char) not null, PREFS clob not null, primary key (ID));
-create table SST_REPORTS (ID number(19,0) not null, SITE_ID varchar2(99 char), TITLE varchar2(255 char) not null, DESCRIPTION clob, HIDDEN number(1,0), REPORT_DEF clob not null, CREATED_BY varchar2(99 char) not null, CREATED_ON timestamp not null, MODIFIED_BY varchar2(99 char), MODIFIED_ON timestamp, primary key (ID));
-create table SST_RESOURCES (ID number(19,0) not null, USER_ID varchar2(99 char) not null, SITE_ID varchar2(99 char) not null, RESOURCE_REF varchar2(255 char) not null, RESOURCE_ACTION varchar2(12 char) not null, RESOURCE_DATE date not null, RESOURCE_COUNT number(19,0) not null, primary key (ID));
-create table SST_SITEACTIVITY (ID number(19,0) not null, SITE_ID varchar2(99 char) not null, ACTIVITY_DATE date not null, EVENT_ID varchar2(32 char) not null, ACTIVITY_COUNT number(19,0) not null, primary key (ID));
-create table SST_SITEVISITS (ID number(19,0) not null, SITE_ID varchar2(99 char) not null, VISITS_DATE date not null, TOTAL_VISITS number(19,0) not null, TOTAL_UNIQUE number(19,0) not null, primary key (ID));
-create index SST_EVENTS_SITE_ID_IX on SST_EVENTS (SITE_ID);
-create index SST_EVENTS_USER_ID_IX on SST_EVENTS (USER_ID);
-create index SST_EVENTS_EVENT_ID_IX on SST_EVENTS (EVENT_ID);
-create index SST_EVENTS_DATE_IX on SST_EVENTS (EVENT_DATE);
-create index SST_PREFERENCES_SITE_ID_IX on SST_PREFERENCES (SITE_ID);
-create index SST_REPORTS_SITE_ID_IX on SST_REPORTS (SITE_ID);
-create index SST_RESOURCES_DATE_IX on SST_RESOURCES (RESOURCE_DATE);
-create index SST_RESOURCES_RES_ACT_IDX on SST_RESOURCES (RESOURCE_ACTION);
-create index SST_RESOURCES_USER_ID_IX on SST_RESOURCES (USER_ID);
-create index SST_RESOURCES_SITE_ID_IX on SST_RESOURCES (SITE_ID);
-create index SST_SITEACTIVITY_DATE_IX on SST_SITEACTIVITY (ACTIVITY_DATE);
-create index SST_SITEACTIVITY_EVENT_ID_IX on SST_SITEACTIVITY (EVENT_ID);
-create index SST_SITEACTIVITY_SITE_ID_IX on SST_SITEACTIVITY (SITE_ID);
-create index SST_SITEVISITS_SITE_ID_IX on SST_SITEVISITS (SITE_ID);
-create index SST_SITEVISITS_DATE_IX on SST_SITEVISITS (VISITS_DATE);
-create index SST_EVENTS_SITEEVENTUSER_ID_IX on SST_EVENTS (SITE_ID,EVENT_ID,USER_ID);
-create sequence SST_EVENTS_ID;
-create sequence SST_JOB_RUN_ID;
-create sequence SST_PREFERENCES_ID;
-create sequence SST_REPORTS_ID;
-create sequence SST_RESOURCES_ID;
-create sequence SST_SITEACTIVITY_ID;
-create sequence SST_SITEVISITS_ID;
 
 -- OPTIONAL: Preload with default reports (STAT-35)
 --   0) Activity total (Show activity in site, with totals per event.)
@@ -1277,52 +1208,8 @@ DROP COLUMN GRADEBOOK;
 ALTER TABLE MFR_TOPIC_T
 DROP COLUMN GRADEBOOK_ASSIGNMENT;
 
--- SAK-17428
-alter table GB_CATEGORY_T
-add (
-  IS_EQUAL_WEIGHT_ASSNS number(1,0),
-  IS_UNWEIGHTED number(1,0),
-  CATEGORY_ORDER number(10,0),
-  ENFORCE_POINT_WEIGHTING number(1,0)
-);
-
-alter table GB_GRADEBOOK_T
-add (
-  IS_EQUAL_WEIGHT_CATS number(1,0),
-  IS_SCALED_EXTRA_CREDIT number(1,0),
-  DO_SHOW_MEAN number(1,0),
-  DO_SHOW_MEDIAN number(1,0),
-  DO_SHOW_MODE number(1,0),
-  DO_SHOW_RANK number(1,0),
-  DO_SHOW_ITEM_STATS number(1,0)
-);
-
-alter table GB_GRADABLE_OBJECT_T
-add (
-  IS_NULL_ZERO number(1,0)
-);
--- END SAK-17428
-
--- SAK-15311
-ALTER TABLE GB_GRADABLE_OBJECT_T 
-ADD ( 
-SORT_ORDER number(10,0) 
-); 
-
 -- SAK-17679/SAK-18116
 alter table EMAIL_TEMPLATE_ITEM add VERSION number(10,0) DEFAULT NULL;
-
--- SAM-818
-alter table SAM_ITEM_T add PARTIAL_CREDIT_FLAG number(1,0) NULL; 
-alter table SAM_PUBLISHEDITEM_T add PARTIAL_CREDIT_FLAG number(1,0) NULL; 
-alter table SAM_ANSWER_T add PARTIAL_CREDIT float NULL; 
-alter table SAM_PUBLISHEDANSWER_T add PARTIAL_CREDIT float NULL; 
-
--- SAM-676
-create table SAM_GRADINGATTACHMENT_T (ATTACHMENTID number(19,0) not null, ATTACHMENTTYPE varchar2(255 char) not null, RESOURCEID varchar2(255 char), FILENAME varchar2(255 char), MIMETYPE varchar2(80 char), FILESIZE number(19,0), DESCRIPTION varchar2(4000 char), LOCATION varchar2(4000 char), ISLINK number(1,0), STATUS number(10,0) not null, CREATEDBY varchar2(255 char) not null, CREATEDDATE timestamp not null, LASTMODIFIEDBY varchar2(255 char) not null, LASTMODIFIEDDATE timestamp not null, ITEMGRADINGID number(19,0), primary key (ATTACHMENTID));
-create index SAM_GA_ITEMGRADINGID_I on SAM_GRADINGATTACHMENT_T (ITEMGRADINGID);
-alter table SAM_GRADINGATTACHMENT_T add constraint FK28156C6C4D7EA7B3 foreign key (ITEMGRADINGID) references SAM_ITEMGRADING_T;
-create sequence SAM_GRADINGATTACHMENT_ID_S;
 
 -- SAM-834
 UPDATE SAM_ASSESSFEEDBACK_T 
@@ -1345,7 +1232,6 @@ alter table POLL_OPTION add DELETED number(1,0) DEFAULT NULL;-- This is the Orac
 
 -- PRFL-94 remove twitter from preferences
 -- NOTE: users will need to re-add their Twitter details to Profile2
-alter table PROFILE_PREFERENCES_T drop column TWITTER_ENABLED;
 alter table PROFILE_PREFERENCES_T drop column TWITTER_USERNAME;
 alter table PROFILE_PREFERENCES_T drop column TWITTER_PASSWORD;
 
@@ -1357,11 +1243,6 @@ create table PROFILE_EXTERNAL_INTEGRATION_T (
   TWITTER_SECRET varchar2(255),
   primary key (USER_UUID)
 );
--- SAK-5742 create SAKAI_PERSON_T indexes  
-create index SAKAI_PERSON_SURNAME_I on SAKAI_PERSON_T (SURNAME);
-create index SAKAI_PERSON_ferpaEnabled_I on SAKAI_PERSON_T (ferpaEnabled);
-create index SAKAI_PERSON_GIVEN_NAME_I on SAKAI_PERSON_T (GIVEN_NAME);
-create index SAKAI_PERSON_UID_I on SAKAI_PERSON_T (UID_C);
 -- This is the Oracle Sakai 2.7.1 -> 2.7.2 conversion script
 -- --------------------------------------------------------------------------------------------------------------------------------------
 -- 
@@ -1381,98 +1262,12 @@ delete from SAKAI_CLUSTER;
 -- Change the datatype
 alter table SAKAI_CLUSTER modify (UPDATE_TIME timestamp with time zone);
 
-/* PRFL-392 change row size of image URI columns */
+-- PRFL-392 change row size of image URI columns
 alter table PROFILE_IMAGES_T modify RESOURCE_MAIN varchar2(4000);
 alter table PROFILE_IMAGES_T modify RESOURCE_THUMB varchar2(4000);
 
 alter table PROFILE_IMAGES_EXTERNAL_T modify URL_MAIN varchar2(4000); 
 alter table PROFILE_IMAGES_EXTERNAL_T modify URL_THUMB varchar2(4000);
-
--- Clean up Samigo duplicate entries
-create or replace PROCEDURE sam_clean_duplicate_responses AS
-BEGIN
- declare
-  cuenta_null INTEGER;
-  cuenta_notnull INTEGER;
-  gradingId INTEGER;
-  tmp DATE;
-begin
-  dbms_output.enable(1000000);
- FOR r in ( 
-    SELECT g.PUBLISHEDITEMID, g.AGENTID, g.ASSESSMENTGRADINGID, g.PUBLISHEDITEMTEXTID FROM SAM_ITEMGRADING_T g, sam_publisheditem_t i
-    where g.publisheditemid = i.itemid and (i.typeid=1 or i.typeid=4)
-    GROUP BY g.PUBLISHEDITEMID, g.AGENTID, g.ASSESSMENTGRADINGID, g.PUBLISHEDITEMTEXTID HAVING COUNT(*) > 1
-  ) LOOP
-    select count(*) into cuenta_null from sam_itemgrading_t g where
-      g.agentid = r.agentid and
-      g.publisheditemid = r.publisheditemid and
-      g.assessmentgradingid = r.assessmentgradingid and
-      g.publisheditemtextid = r.publisheditemtextid and
-      g.submitteddate is null;
-    select count(*) into cuenta_notnull from sam_itemgrading_t g where
-      g.agentid = r.agentid and
-      g.publisheditemid = r.publisheditemid and
-      g.assessmentgradingid = r.assessmentgradingid and
-      g.publisheditemtextid = r.publisheditemtextid and
-      g.submitteddate is not null;
-    if (cuenta_notnull = 1 AND cuenta_null = 1) then
-      delete from sam_itemgrading_t where itemgradingid in (
-        select g.itemgradingid from sam_itemgrading_t g where
-        g.agentid = r.agentid and
-        g.publisheditemid = r.publisheditemid and
-        g.assessmentgradingid = r.assessmentgradingid and
-        g.publisheditemtextid = r.publisheditemtextid and
-        g.submitteddate is null
-      );
-      dbms_output.put_line('Eliminated: ' || r.PUBLISHEDITEMID || ', ' || r.AGENTID  || ', ' || r.ASSESSMENTGRADINGID || ', ' || r.PUBLISHEDITEMTEXTID);
-    ELSIF (cuenta_notnull = 0 AND cuenta_null >= 2) THEN
-      delete from sam_itemgrading_t where itemgradingid in (
-        select MIN(g.itemgradingid) from sam_itemgrading_t g where
-        g.agentid = r.agentid and
-        g.publisheditemid = r.publisheditemid and
-        g.assessmentgradingid = r.assessmentgradingid and
-        g.publisheditemtextid = r.publisheditemtextid
-        GROUP BY g.PUBLISHEDITEMID, g.AGENTID, g.ASSESSMENTGRADINGID, g.PUBLISHEDITEMTEXTID
-      );
-      dbms_output.put_line('Doubles without dates: ' || r.PUBLISHEDITEMID || ', ' || r.AGENTID  || ', ' || r.ASSESSMENTGRADINGID || ', ' || r.PUBLISHEDITEMTEXTID);
-    ELSIF (cuenta_notnull = 1 AND cuenta_null >= 2) THEN
-      delete from sam_itemgrading_t where itemgradingid in (
-        select g.itemgradingid from sam_itemgrading_t g where
-        g.agentid = r.agentid and
-        g.publisheditemid = r.publisheditemid and
-        g.assessmentgradingid = r.assessmentgradingid and
-        g.publisheditemtextid = r.publisheditemtextid and
-        g.submitteddate is null
-      );
-      dbms_output.put_line('Multiple values: ' || r.PUBLISHEDITEMID || ', ' || r.AGENTID  || ', ' || r.ASSESSMENTGRADINGID || ', ' || r.PUBLISHEDITEMTEXTID);
-    ELSE
-      select max(g.submitteddate) into tmp from sam_itemgrading_t g where
-        g.agentid = r.agentid and
-        g.publisheditemid = r.publisheditemid and
-        g.assessmentgradingid = r.assessmentgradingid and
-        g.publisheditemtextid = r.publisheditemtextid and
-        g.submitteddate is not null;
-      delete from sam_itemgrading_t where itemgradingid in (
-        select g.itemgradingid from sam_itemgrading_t g where
-        g.agentid = r.agentid and
-        g.publisheditemid = r.publisheditemid and
-        g.assessmentgradingid = r.assessmentgradingid and
-        g.publisheditemtextid = r.publisheditemtextid and
-        g.submitteddate != tmp
-      );
-      dbms_output.put_line('Ignored: ' || r.PUBLISHEDITEMID || ', ' || r.AGENTID  || ', ' || r.ASSESSMENTGRADINGID || ', ' || r.PUBLISHEDITEMTEXTID || ', ' || tmp);
-    end if;
-  end loop;
-  commit;
-  exception
-    when VALUE_ERROR then
-        dbms_output.put_line('Error: ');
-end;
-END sam_clean_duplicate_responses;
-
-call sam_clean_duplicate_responses ();
-
-SELECT * FROM USER_ERRORS WHERE NAME='SAM_CLEAN_DUPLICATE_RESPONSES' ORDER BY SEQUENCE, LINE;
 
 -- This is the Oracle Sakai 2.7.1 -> 2.8.0 conversion script
 -- --------------------------------------------------------------------------------------------------------------------------------------
@@ -1531,7 +1326,7 @@ alter table SAM_ASSESSMENTGRADING_T add LASTVISITEDQUESTION number(10,0) default
 
 -- SAM-775
 -- If you get an error when running this script, you will need to clean the duplicates first. Please refer to SAM-775.
-create UNIQUE INDEX ASSESSMENTGRADINGID ON SAM_ITEMGRADING_T (ASSESSMENTGRADINGID, PUBLISHEDITEMID, PUBLISHEDITEMTEXTID, AGENTID, PUBLISHEDANSWERID);
+--create UNIQUE INDEX ASSESSMENTGRADINGID ON SAM_ITEMGRADING_T (ASSESSMENTGRADINGID, PUBLISHEDITEMID, PUBLISHEDITEMTEXTID, AGENTID, PUBLISHEDANSWERID);
 
 -- Gradebook2 support
 -- SAK-19080 / GRBK-736
@@ -1589,17 +1384,12 @@ insert into MFR_TOPIC_T (ID, UUID, MODERATED, AUTO_MARK_THREADS_READ, SORT_INDEX
   where s1.c1 = 3);
     
 
---MSGCNTR-360
---Hibernate could have missed this index, if this fails, then the index may already be in the table
-CREATE INDEX user_type_context_idx ON MFR_PVT_MSG_USR_T ( USER_ID, TYPE_UUID, CONTEXT_ID, READ_STATUS);
-
 -- New column for Email Template service
 -- SAK-18532/SAK-19522
 alter table EMAIL_TEMPLATE_ITEM add EMAILFROM varchar2(255 CHAR);
 
 -- SAK-18855
 alter table POLL_POLL add POLL_IS_PUBLIC number(1,0);
-
 
 -- Profile2 1.3-1.4 upgrade start
 
@@ -2227,3 +2017,4 @@ CREATE TABLE melete_special_access (
   CONSTRAINT FK_MSA_MM FOREIGN KEY(MODULE_ID) REFERENCES melete_module(MODULE_ID)
 ); 
 
+update POLL_POLL set POLL_IS_PUBLIC = 1 where POLL_IS_PUBLIC is NULL;
