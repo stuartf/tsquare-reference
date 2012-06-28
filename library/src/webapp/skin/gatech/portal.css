@@ -916,7 +916,7 @@ div#privacy_overlay {
 .toggleTools #toggleToolMax{
 	background:#fff url(images/toggler-back.png) -64px 0 no-repeat;
   position: relative;
-  left: 40px;
+  left: 14px;
 }
 .toggleTools #toggleNormal{
 	background:#fff url(images/toggler-back.png) -80px 0 no-repeat
@@ -1294,4 +1294,8 @@ a.icon-sakai-lti-piazza {
 
 a[class*='icon-sakai-lti-wimba-'] {
 	background-image: url(images/wimba.png);
+}
+
+a.icon-sakai-lti-gatech-digitalmedia {
+  background-image: url(../../image/silk/film.png);
 }
