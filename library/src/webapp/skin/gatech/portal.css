@@ -1280,11 +1280,11 @@ background-image: url(../../image/silk/comment.png);
 	background-image: url(../../image/silk/calendar_edit.png);
 }
 
-a[class*='icon-sakai-basiclti-'] { 
+a[class*='icon-sakai-lti-'] { 
 	background-image: url(../../image/silk/application_go.png); 
 }
 
-a.icon-sakai-basiclti-piazza {
+a.icon-sakai-lti-piazza {
 	background-image: url(images/piazza.png);
 }
 
@@ -1292,6 +1292,6 @@ a.icon-sakai-basiclti-piazza {
 	background-image: url(images/tt.png);
 }
 
-a[class*='icon-sakai-basiclti-wimba-'] {
+a[class*='icon-sakai-lti-wimba-'] {
 	background-image: url(images/wimba.png);
 }
