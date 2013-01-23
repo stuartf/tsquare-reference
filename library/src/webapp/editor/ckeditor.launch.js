@@ -78,6 +78,16 @@ sakai.editor.editors.ckeditor.launch = function(targetId, config) {
         ],
         resize_dir: 'vertical'
     });
+    
+	//SAK-22505
+	CKEDITOR.on('dialogDefinition', function(e) {
+		var dialogName = e.data.name;
+		var dialogDefinition = e.data.definition;
+		dialogDefinition.dialog.parts.dialog.setStyles(
+		{
+			position : 'absolute'
+		});
+	});
 }
 
 sakai.editor.launch = sakai.editor.editors.ckeditor.launch;
