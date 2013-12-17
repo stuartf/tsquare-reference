@@ -385,6 +385,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	background: transparent url(images/tab-right.gif) no-repeat right top;
 	padding: 8px 13px 3px 2px;
 	margin: 0pt;
+	vertical-align: bottom;
 }
 
 /*the current sites' link - consists of the li and a*/
@@ -716,16 +717,15 @@ page estate
 /*PART 6 - SITE AFFILIATION,SITE TYPE/STATUS AND PRESENCE - children of #toolMenuWrap	*/
 /*site logo wrapper*/
 #worksiteLogo{
-	width: 9.7em;
-	height: auto;
-	overflow: hidden;
-	display: block;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
 }
-
 /*site logo image - Sakai may output,depending on installation,an image here based in site affiliation. Site owner may also point to a url - overriding the Sakai provided image*/
-#worksiteLogo img{
-	display: block;
-	margin: .5em auto;
+#worksiteLogo img{ 
+    width:95%;
+    margin:.5em auto;
 }
 
 /*wrapper for the string that Sakai will output based on site type (ie. project,course) this is open ended and institution specific*/
