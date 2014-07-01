@@ -8,6 +8,10 @@ body{
 	font-size: 80%;
 }	
 
+body a:link {
+	text-decoration: none !important;/*this has to be added to get rid of all underlines for the site*/
+}
+
 /*stub in tool_base.css - skinned here */
 
 hr.itemSeparator{
@@ -20,38 +24,38 @@ hr.itemSeparator{
 /*SECTION 2 LINKS*/
 a:link{
 	color: #001c3a;
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
-
 a:visited{
 	color: #001c3a;
-	text-decoration: underline !important;
+	font-size:120%;
+	text-decoration: none !important;
 }
 
 a:hover,a:active{
 	color: #c60;
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
 
 a:focus{
 	color: #c60;
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
 
 /*links inside the calendar tool tables*/
 table.calendar td a:hover{
-	text-decoration: underline;
+	text-decoration: none;
 }
 /*links inside the <th>  of the standard list table*/
 .listHier th a:link,.listHier th a:visited{
 	color: #001c3a;
-	text-decoration: underline;
+	text-decoration: none;
 	border: none;
 }
 
 .listHier th a:hover{
 	color: #c60;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 /*some links are jscripted so the href is the same - cannot provide visited functionality - so make both the same*/
@@ -63,7 +67,7 @@ table.calendar td a:hover{
 
 .specialLink a:hover{
 	color: #c60;
-	text-decoration: underline;
+	text-decoration: none;
 }
 /*links in resources - selected for move*/
 tr.selectedMove a:link,tr.selectedMove a:visited{
@@ -99,7 +103,7 @@ tr.selectedMove a:link,tr.selectedMove a:visited{
 
 .itemAction  a:hover{
 	color: #27d; /*for ie*/
-	text-decoration: underline !important; 
+	text-decoration: none !important; 
 }
 
 html>body .itemAction  a:hover{
@@ -130,9 +134,11 @@ see: http://www.quirksmode.org/bugreports/archives/2005/07/Wrapped_inlinenowrap_
 	display:inline-block;
 	padding-left: 2px;
 	padding-right: 2px;
-	background: #c6d2e1;
-	border: 1px solid #001c3a;
-	color: #001c3a;
+	background: #343538 ;
+	border: 4px solid #343538 ;
+	color: #fff;
+	border-radius: 2px;/*changed background color, border width and color, and text color. Added border-radius this changes the option button*/
+	font-weight: 400;
 }
 
 .navIntraTool a:visited{
@@ -378,11 +384,11 @@ table.calendar .event{
 /*skinned header of standard tab. data table*/
 .listHier th{
 	background-color: #eee;
-	border: 1px solid #999;
+	/* eliminated border around announcement header table*/
 }
 /*skinned cell of standard tab. data table*/
 .listHier td{
-	vertical-align: top;
+	/*vertical-align: top;eliminated*/
 	padding: .4em;
 }
 
@@ -396,7 +402,7 @@ table.lines tr:hover{
 }
 
 table.lines td{
-	border-bottom: 1px solid #bbb;
+	/*border-bottom: 1px solid #bbb; eliminated the border-bottom*/
 	border-top: 1px solid #eee;
 }
 	
@@ -530,10 +536,10 @@ h4,h5,h6 {
 }
 h3,h4,h5{ 
 	color: #555; 
-	padding: 0; 
+	/*padding: 0; eliminated as well*/
 	font-weight: bold; 
 	font-family: Arial,Helvetica,sans-serif; 
-	margin: 1em 0 0 0; 
+	/*margin: 1em 0 0 0; eliminated to add more space*/
 	background-color: transparent !important; 
 } 
 
@@ -541,10 +547,10 @@ h3,h4,h5{
 /*want to make them look like normal text - but structure the content*/
 /*see: resources, any legacy list*/
 .listHier th h3,.listHier th h4,.listHier th h5,.listHier th h6,.listHier td h3,.listHier td h4,.listHier td h5,.listHier td h6{
-	margin: 0;
+	margin: 2% 0%;/*added more spacing between announcements*/
 	padding: 0;
 	color:#000;
-	font-size: 1em;
+	font-size: 1.1em;/*increased announcement size a little*/
 	background: none;
 	font-weight: normal;
 	font-family: 'Trebuchet MS',Verdana,Geneva,Arial,Helvetica,sans-serif !important;
@@ -977,7 +983,7 @@ width:auto !important
 }
 
 .portletTitle .title{
-	padding: 2px 4px 6px 4px;
+	padding: 15px 4px 15px 0px;/*added much more space around titles*/
 	height: 1em;
 	font-size: 120%;
 	float: left;
@@ -988,7 +994,7 @@ width:auto !important
 	display: inline;
 	margin: 0 0 0 .2em;
 	padding: 0;
-	color: #555;
+	color: #343538;/*keeping consistency of colors*/
 	font-weight: bold;
 	font-size: 1em;
 }
@@ -1002,7 +1008,7 @@ width:auto !important
 }
 
 .portletTitle .action{
-	padding: 2px 4px 6px 2px;
+	padding: 15px 4px 15px 0px;/*made question mark align with text*/
 	text-align: right;
 	vertical-align: middle;
 }

@@ -8,6 +8,79 @@ body{
 	background: #fff;
 }
 
+body a:link {
+	text-decoration: none !important;/*this has to be added to get rid of all underlines for the site*/
+}
+
+
+@media all and (min-width : 300px) and (max-width : 480px) {
+    
+
+#container #toolMenu {
+	width: 320px !important;
+    height: 320px !important;
+}
+
+#toolMenuWrap{
+	color: #000;
+	padding: 0em 0em .5em 0em;
+	margin: 0 auto;
+	background-color: #DBDBDB;
+    width: 480px;
+	height:100% !important;
+}
+
+#toolMenu li{
+	width: 480px !important;
+	padding: 4% 5%;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
+	border-radius: 1px;
+	transition: all 0.2s ease 0s;
+	-webkit-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	
+}
+
+#siteLinkList li {
+    width:45% !important;
+	display:block;
+	float:left;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
+	padding: 10px 5px;
+	border-radius: 1px;
+	transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+}
+    
+#siteLinkList li span {
+	display: block;
+	/*background: transparent url(images/tab-right.gif) no-repeat right top;*/
+	padding: 8px 13px 3px 2px;
+	margin: 0pt;
+    font-size: .85em;
+}
+#col1of2{
+	width: 50%;
+	float: left;
+	margin: 1.5em 0;
+    margin-left: -11em !important;/*perfect width for landscape mode*/
+	min-width: 400px;
+}
+
+#col2of2{
+	width: 50%;
+	margin: 1.5em 0;
+	float: left;
+    margin-left: -11em !important;/*perfect width for landscape mode*/
+	min-width: 400px;
+}
+
+}/*end of media query*/
 /*PART 1 - MAIN LAYOUT BLOCKS*/
 
 /*outer wrapper for portal content (decorative - child is #portalContainer )*/
@@ -26,11 +99,11 @@ body{
 	margin: 0;
 	padding: 0;
 	height:100%;
-	background: #4a6594;
+	background: #343538;/*changed background color of home page*/
 	overflow:visible;
 }
 #headerMin{
-	border-bottom:2px solid #001c3a
+	/*border-bottom:2px solid #001c3a eliminate only with home page login between header and body */
 }
 
 /*accessibility links wrapper */
@@ -59,7 +132,7 @@ can set display:none if needed because the list-style is taking care of it*/
 /*wrapper for site content (includes as children #toolMenuWrap,#content and #footer)*/
 #container{
 	width: 100%;
-	padding: 1.2em 0 0 0;
+	/* padding: 1.2em 0 0 0; */
 	clear:both;
 	float:none;
 }
@@ -67,10 +140,13 @@ can set display:none if needed because the list-style is taking care of it*/
 /*wrapper for #toolMenu - children are #worsiteLogo,#toolMenu*/
 #toolMenuWrap{
 	float: left;
-	width: 11.5em;
+	/*width: 11.5em;*/
 	color: #000;
-	padding: 0em .5em 0 1em;
+	padding: 0em 0em .5em 0em;
 	margin: 0;
+	background-color: #DBDBDB;
+	/*position:fixed; fixes the positioning of the navigation bar have to take out because longer menus mess things up*/
+	height:900px;/*makes the div element color extend all the way down. Need to make it stay up as well. Temporary fix doesn't work all the time.*/
 }
 
 #toolMenuWrap:hover{
@@ -107,6 +183,9 @@ site types are a local setting - adjust */
 	clear: both;
 	top: 0;
 	text-align: center;
+	background-color: #343538;
+	position:relative;
+	z-index:1;/*added position and z-index to footer to allow it to stay on top for now*/
 }
 #footer.sakaiCopyrightInfo {
 	color: #fff;
@@ -175,8 +254,12 @@ site types are a local setting - adjust */
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: #4a6594;
+	background: #343538;/*New background color*/
 	overflow: hidden;
+	background-image: url(http://www.gatech.edu/sites/all/themes/gt/images/logos/logo-gt.png);
+	background-position: 0px 0px;
+	background-repeat:no-repeat;
+	position: relative;
 }
 
 /*container wrapping branding images - portal outputs one /library/skin/<skin name>/images/logo_inst.gif
@@ -224,11 +307,11 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 	float: right;
 	text-align: right;
 	vertical-align: top;
-	background: #4a6594 url(images/newlogo.gif) no-repeat;
-	margin: 4px 0 0 0; 
-	padding: 0 10px 0 0;
+	/*background: #4a6594 url(images/newlogo.gif) no-repeat;*/
+	margin: 2px 0 0 0; 
+	/*padding: 0 10px 0 0;*/
 	width: 7em;
-	height: 20px; 
+	height: 80px; /*changed height a little to uncrowd logout button*/
 }
 
 /*the anchor for the login link for CAS above can be an image - treated here*/
@@ -241,21 +324,27 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 
 /*login links for CAS,logout link*/
 #mastLogin a,#mastLogin a:visited{
-	color: #001c3a;
+	color: #ffffff;
+	font-weight: 700;
 	margin: 0;
-	padding: 2px 5px 2px 5px;
-	border: 1px solid #001c3a;
-	background: #eee354;
+	padding: 10px 12px;
+	/*border: 1px solid #001c3a;*/
+	background: #EEB211;/*changed color*/
 	text-decoration: none;
+	border-radius: 0 0px 0 5px;
+	transition: all 0.3s ease 0s; /*added transition effect for logout button*/
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
 }
 
 #mastLogin a:hover{
-	color: #001c3a;
+	color: #000; /*changed login hover colors:*/;
 	text-decoration: none;
 	margin: 0;
-	padding: 2px 5px 2px 5px;
-	border: 1px solid #001c3a;
-	background: #d5bb00;
+	padding: 2px 15px 55px 25px;/*added lengthing on right side of logout */
+	/*border: 1px solid #001c3a;*/
+	background: #fff;
 }
 
 /*login form elements - in order,form,userid field,password field,login button - first 2 have labels associated with them,gettable as #loginForm label{
@@ -313,7 +402,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 .siteNavWrap {
 	position: relative;
 	width: 100%;
-	background: #4a6594 url(images/blue-border.gif) repeat-x center bottom;
+	background: #343538;
 	float: left;
 	clear: both;
 	font-size: 100%;
@@ -347,6 +436,8 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	vertical-align: middle;
 	margin: 0.2em 0 0 0.6em;
 	float: left;
+	border-radius: 0 0 4px 4px;
+	border-color: #343538;
 }
 
 /*the <select> contextually defined*/
@@ -355,7 +446,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	font-size: .9em;
 	margin: 7px 0 0 ;
 	padding: 0;
-	border: 2px solid #EEB211;
+	border: 3px solid #EEB211;
 }
 
 #selectNav select option{
@@ -369,7 +460,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	list-style-position:outside;
 	list-style-type:none;
 	margin: 0;	
-	padding: 0 0 0 6px;
+	padding: 0 0 0 0px;
 	float: left;
 }
 
@@ -378,27 +469,51 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	position: relative;
 	display:block;
 	float:left;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
+	padding: 10px 5px;
+	/* margin-right:2px; */ /*Added margin right in there to space out tiles*/
+	/*added tons in here padding, box-shadow, border etc and all the transition elements*/
+	border-radius: 1px;
+	transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
 }
 
 /*links to other sites*/
 #siteLinkList li a, #siteLinkList li a:link, #siteLinkList li a:visited {
-	color: #001c3a;
+	color: #fff;
+	font-weight: 700;
 	text-decoration: none;
 	display: block;
 	float: left;
-	background: transparent url(images/tab-left.gif) no-repeat scroll left top;
-	margin: 0 2px 0 0;
+	/*background: transparent url(images/tab-left.gif) no-repeat scroll left top;*/
+	/*margin: 0 2px 0 0; got rid of this*/
 	padding: 0 0 0 11px;
-	border-bottom: 2px solid #001c3a;
+	/*border-bottom: 2px solid #001c3a;*/
 }
 
 #siteLinkList li a:hover {
-	text-decoration: underline;
+	text-decoration: none;
+	/*background-color: #EEB211;
+	transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s; don't need anymore*/
+
 }
+/*completely new addition to the code*/
+#siteLinkList li:hover {
+	text-decoration: none;
+	background-color: #EEB211;
+
+}
+
 
 #siteLinkList li span {
 	display: block;
-	background: transparent url(images/tab-right.gif) no-repeat right top;
+	/*background: transparent url(images/tab-right.gif) no-repeat right top;*/
 	padding: 8px 13px 3px 2px;
 	margin: 0pt;
 }
@@ -409,16 +524,18 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	#siteLinkList li.selectedTab a:link,
 	#siteLinkList li.selectedTab a:visited,
 	#siteLinkList li.selectedTab a:hover {
-	color: #000;
-	font-weight: bolder;
+	color: #fff;/*changed selected text color to white removed font-weight since inherited. Removed Background images*/
 	text-decoration: none;
-	background: transparent url(images/tab-left-selected.gif) no-repeat scroll left top;
 	border-width: 0;
 }
 
 #siteLinkList li.selectedTab a span{
-	background:transparent url(images/tab-right-selected.gif) no-repeat scroll right top;
-	padding: 8px 11px 5px 0;
+	color: #fff;/*background:transparent url(images/tab-right-selected.gif) no-repeat scroll right top; padding: 8px 11px 5px 0; Eliminated these */
+}
+
+#siteLinkList li.selectedTab {
+	background-color: #EEB211;
+	color: #fff;
 }
 
 #siteLinkList li.tab-dim a,
@@ -426,11 +543,10 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	#siteLinkList li.tab-dim a:visited,
 	#siteLinkList li.tab-dim a:hover {
 	color: #666;
-	background: transparent url(images/tab-left-selected.gif) no-repeat scroll left top;
+	/* background: transparent url(images/tab-left-selected.gif) no-repeat scroll left top; */
 }
 
 #siteLinkList li.tab-dim a span {
-	background:transparent url(images/tab-right-selected.gif) no-repeat scroll right top;
 	padding-bottom: 3px;
 }
 
@@ -446,19 +562,18 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 #siteLinkList li.more-active a,
 	#siteLinkList li.more-active a:link,
 	#siteLinkList li.more-active a:visited {
-	color:#000000;
-	font-weight: bolder;
+	color:#fff;
+	/*font-weight: bolder; removed */
 	text-decoration: none;
-	background: transparent url(images/tab-left-selected.gif) no-repeat scroll left top;	
-	border-width: 0;
+	/*background: transparent url(images/tab-left-selected.gif) no-repeat scroll left top;	
+	border-width: 0; removed */
 }
 
 #siteLinkList li.more-active a:hover {
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 #siteLinkList li.more-active a span {
-	background:transparent url(images/tab-right-selected.gif) no-repeat scroll right top;
 	padding-bottom: 5px;
 }
 
@@ -520,7 +635,8 @@ html>body .dhtml_more_tabs {
 
 .dhtml_more_tabs a:link, .dhtml_more_tabs a:visited, .dhtml_more_tabs active{
 	color: #001c3a; 
-	text-decoration: underline !important;
+	font-weight:700;
+	text-decoration: none !important;
 }
 
 .dhtml_more_tabs a:hover {
@@ -561,42 +677,43 @@ html>body .dhtml_more_tabs {
 	width: 150px;
 	padding: 0 0 11px 0;
 	margin: 0;
-	background: url(images/mytoolsfooter.gif) bottom left no-repeat;
+	/* background: url(images/mytoolsfooter.gif) bottom left no-repeat; */
 }
 
 #container #toolMenu ul {
-	background: url(images/tools.gif) no-repeat top left;
+	/* background: url(images/tools.gif) no-repeat top left; */
 }
 
 #container.workspace #toolMenu ul {
-	background: url(images/workspace-tools.gif) no-repeat top left;
+	/*background: url(images/workspace-tools.gif) no-repeat top left;*/
 }
 
 #container.project #toolMenu ul {
-	background: url(images/project-tools.gif) no-repeat top left;
+	/*background: url(images/project-tools.gif) no-repeat top left;*/
 }
 
 #container.course #toolMenu ul {
-	background: url(images/course-tools.gif) no-repeat top left;
+	/* background: url(images/course-tools.gif) no-repeat top left; */
 }
 
 #toolMenu ul{
-	width: 150px;
+	width: 100%;
 	list-style: none;
 	margin: 0 -10px auto 0;
 	padding: 20px 0 0 0; 
 }
 
 #toolMenu li{
-	margin: 0;
 	width: auto;
-	padding: 0;
-	border-left: 1px solid #4a6594;
-	border-right: 1px solid #4a6594;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #eee;
-	background: #ffc;
-	padding: 0;
+	padding: 3% 3%;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
+	border-radius: 1px;
+	transition: all 0.2s ease 0s;
+	-webkit-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
+	
 }
 
 /*span shim for fine grained manipulation of link display (decorative)
@@ -605,40 +722,39 @@ also hide if are going to be using icon links (as background of <a> nad <li>
 
 #toolMenu li.selectedTool {
 	display: block;
-	background-color: #fff;
-	font-weight: bold;
-	padding: 2px 0 2px 0;
+	background-color: #EEB211;
+	padding: 2% 0 2% 0;
 }
 
 #toolMenu li span{
-
+	color: #333;
+	font-weight:700;
 }
 
 #toolMenu li a:link,#toolMenu li a{
 	display: block;
-	text-decoration: none;
-	color: #001c3a;
+	text-decoration: none !important;/*overrides the decoration*/
+	color: #343538;
   margin: 0 6px;
 	padding: 4px 22px;
   background-repeat: no-repeat;
 }
 #toolMenu li:hover{
 	text-decoration: none;
-	color: #100c3a;
-	background-color: #eee354;
+	color: #000;
+	background-color: #EEB211;
 }
 
 #toolMenu li a.selected{
 	text-decoration: none;
 	color: #000;
-	font-weight: bold;
-	padding: 2px 0 2px 0;
+	padding: 2% 0 2% 0;
 }
 
 #toolMenu li a.selected:hover{
 	text-decoration: none;
 	color: #000;
-	padding: 2px 0 2px 0;
+	padding: 2% 0 2% 0;
 }
 
 
@@ -703,14 +819,17 @@ also hide if are going to be using icon links (as background of <a> nad <li>
 }
 
 #col1of2{
-	width: 49%;
+	width: 50%;
 	float: left;
-	margin: 0;
+	margin: 1.5em 0;
+	min-width: 400px;
 }
 
 #col2of2{
 	width: 50%;
-	float: right;
+	margin: 1.5em 0;
+	float: left;
+	min-width: 400px;
 }
 
 /*wrapper class for portlets - decorative -  contains two wrapper block children:.portletTitleWrap and  .portletMainWrap*/
@@ -721,7 +840,7 @@ also hide if are going to be using icon links (as background of <a> nad <li>
 below they are contextually defined depending on the column as an example,as you may want to adjust the widths accordingly*/ 
 #col1 .portletTitleWrap{
 	width: 99%;
-	border-bottom: 2px solid #001c3a;
+	border-bottom: 1px solid #dadada;/*changed color*/
 }
 
 #col1 .portletMainWrap{
@@ -754,7 +873,7 @@ below they are contextually defined depending on the column as an example,as you
 }
 
 .portletTitle .title{
-	padding: 2px 4px 6px 0;
+	padding: 15px 4px 15px 0px;/*adding more padding*/
 	height: 1em;
 	float: left;
 	color: #000;
@@ -779,7 +898,7 @@ below they are contextually defined depending on the column as an example,as you
 }
 
 .portletTitle .action{
-	padding: 2px 4px 6px 2px;
+	padding: 15px 4px 15px 0px;/*more padding to title*/
 	text-align: right;
 	vertical-align: middle;
 }
@@ -859,7 +978,7 @@ below they are contextually defined depending on the column as an example,as you
 
 /*a third wrapper - reserved for copyright blurbs*/
 .sakaiCopyrightInfo{
-	color: #001c3a;
+	color: #fff;
 }
 
 /*PART 8 - CONVENIENCE*/
@@ -900,27 +1019,56 @@ div#privacy_overlay {
 	opacity: 0.7;
    z-index: 0;
 }
-
+/*Got rid of all of these images and replaced it with the below.*/
 .toggleToolstoggleNav img#toggleToolMax{
-  background:#fff url(images/toggler-back.png) 0 0 no-repeat
+  	width: 0;    
+	height: 0;   
+	border-top: 10px solid transparent;   
+	border-bottom: 10px solid transparent;       
+	border-left: 15px solid #fff;
 }
 .toggleToolstoggleNav #toggleNormal{
-	background:#fff url(images/toggler-back.png) -16px 0 no-repeat
+		width: 0;    
+	height: 0;   
+	border-top: 10px solid transparent;   
+	border-bottom: 10px solid transparent;       
+	border-left: 15px solid #fff;
 }
 .toggleNav #toggleToolMax{
-	background:#fff url(images/toggler-back.png) -32px 0 no-repeat
+		width: 0;    
+	height: 0;   
+	border-top: 10px solid transparent;   
+	border-bottom: 10px solid transparent;       
+	border-left: 15px solid #fff;
 }
 .toggleNav #toggleNormal{
-	background:#fff url(images/toggler-back.png) -48px 0 no-repeat
+		width: 0;    
+	height: 0;   
+	border-top: 10px solid transparent;   
+	border-bottom: 10px solid transparent;       
+	border-left: 15px solid #fff;
 }  
+
 .toggleTools #toggleToolMax{
-	background:#fff url(images/toggler-back.png) -64px 0 no-repeat;
-  position: relative;
-  left: 14px;
+	width: 15%;
+	height: 20px;	
+	margin: 2% auto;	
+	width: 0;    
+	height: 0;   
+	border-top: 10px solid transparent;   
+	border-bottom: 10px solid transparent;       
+	border-right: 15px solid #fff;
 }
 .toggleTools #toggleNormal{
-	background:#fff url(images/toggler-back.png) -80px 0 no-repeat
+	
+	width: 0;    
+	height: 0;   
+	border-top: 10px solid transparent;   
+	border-bottom: 10px solid transparent;       
+	border-left: 15px solid #fff;
+	
 }
+/*The above fixes the arrows for the collapsing of the menu to reflect correctly.*/
 .sakaiMinimizePageNavigation #toolMenu li a, .sakaiMinimizePageNavigation #subSites li a{
 	display:block;
 	padding-right:0 !important;
@@ -930,12 +1078,13 @@ div#privacy_overlay {
 }
 #container.sakaiMinimizePageNavigation #toolMenu{
 	width:22px;
-  background: url("images/collapsed-footer.gif") no-repeat scroll left bottom transparent;
+  /*background: url("images/collapsed-footer.gif") no-repeat scroll left bottom transparent;*/
 }
 
 #container.sakaiMinimizePageNavigation #toolMenu ul {
-	width:22px;
-  background: url("images/collapsed-tools.gif") no-repeat scroll left top transparent;
+	width: 30px;/*allowed minimized menu to be flush with items.*/
+  
+	/* background: url("images/collapsed-tools.gif") no-repeat scroll left top transparent; */
 }
 
 .sakaiMinimizePageNavigation #worksiteLogo, .sakaiMinimizePageNavigation #presenceWrapper{
@@ -950,16 +1099,16 @@ div#privacy_overlay {
     overflow:hidden; 
 }
 .sakaiMinimizePageNavigation #toolMenuWrap, .sakaiMinimizePageNavigation #toolMenuWrap:hover{
-	width:0px;
+	width:30px;/*allowed for minimized menu to be flush with items*/
 	margin-right:1em;
 	border-right:none;
 }
 .sakaiMinimizePageNavigation #content{
 	padding-left:2em;
-	margin-left:31px;
+	margin-left:30px;/*just changed one pixel to make even*/
 }
 .sakaiMinimizeSiteNavigation #siteNavWrapper{
-	display:none
+	display:none;/*added semi-colon*/
 }
 .sakaiMinimizeSiteNavigation #headerMax{
 	padding:0;
@@ -970,21 +1119,26 @@ div#privacy_overlay {
 	display:block;
     position:relative;
     width:100%;
-    height:17px;
-    text-align:right;
+    
+	height:16px;/*made even number again*/
+    
+	text-align:right;
 }
 /** Portal Timeout **/
 #timeout_alert_body {
     position: absolute;
     background: #fff;
     color: #000;
-    border: 4px solid #4A6594;
+    border: 4px solid #343538;
     width: 450px;
     top: 20%;
     left: 50%;
     margin-left: -225px;
     z-index: 10000;
     padding: 5px 5px 5px 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    /*added different border color and border radius*/
 }
 /* PART 9 - Tool Icons */
 
