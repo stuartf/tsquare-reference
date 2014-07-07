@@ -13,13 +13,9 @@ body a:link {
 }
 
 
+/*This is the Mobile Dev Section*/
+/********************************/
 @media all and (min-width : 300px) and (max-width : 480px) {
-    
-
-#container #toolMenu {
-	width: 320px !important;
-    height: 320px !important;
-}
 
 #toolMenuWrap{
 	color: #000;
@@ -27,7 +23,7 @@ body a:link {
 	margin: 0 auto;
 	background-color: #DBDBDB;
     width: 480px;
-	height:100% !important;
+	height:100% !important;/*needed to not get 900px*/
 }
 
 #toolMenu li{
@@ -64,6 +60,22 @@ body a:link {
 	margin: 0pt;
     font-size: .85em;
 }
+
+#content{
+	padding: 0 .5em 0 .5em;
+	margin-top: 0em;
+    float: left; 
+}
+
+
+#col1{
+	width: 100%;
+	float: left;
+    margin: 1.5em 0;
+	margin-left: -11em !important;/*perfect width for landscape mode*/
+	min-width: 400px;
+}
+
 #col1of2{
 	width: 50%;
 	float: left;
@@ -80,7 +92,15 @@ body a:link {
 	min-width: 400px;
 }
 
+
 }/*end of media query*/
+/*End of Mobile Dev Section*/
+/********************************/
+
+
+
+
+
 /*PART 1 - MAIN LAYOUT BLOCKS*/
 
 /*outer wrapper for portal content (decorative - child is #portalContainer )*/
@@ -815,7 +835,10 @@ also hide if are going to be using icon links (as background of <a> nad <li>
 /*PART 7 - PORTLETS - children of #content*/
 /*a page may display portlets in one column or two columns - the next three id selectors address the three possiblities - sole child of column is the .portlet */
 #col1{
-	padding-right: .5em;
+	width: 100%;
+	float: left;
+	margin: 1.5em 0;
+	min-width: 400px;
 }
 
 #col1of2{

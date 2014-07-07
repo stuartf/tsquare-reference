@@ -388,8 +388,9 @@ table.calendar .event{
 }
 /*skinned cell of standard tab. data table*/
 .listHier td{
-	/*vertical-align: top;eliminated*/
 	padding: .4em;
+	font-size: 1.1em;
+	color: #333;
 }
 
 /*lines - provides rules and hover effects on some tables*/
@@ -401,9 +402,21 @@ table.lines tr:hover{
 	background-color: #ffc;
 }
 
+table.lines tr{
+	background-color: #fff;
+    transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+}
+
 table.lines td{
-	/*border-bottom: 1px solid #bbb; eliminated the border-bottom*/
 	border-top: 1px solid #eee;
+	padding: 1.3% 0;
+	 transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
 }
 	
 /*some rows needed to be excluded from the rule and hover - see resources see other sites toggle*/
