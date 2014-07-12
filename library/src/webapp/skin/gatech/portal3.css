@@ -1,6 +1,6 @@
 /*This is the Mobile Dev Section*/
 /********************************/
-@media only screen and (min-device-width: 300px) and (max-device-width: 480px) {
+@media only screen and (min-device-width : 300px) and (max-device-width : 480px) {
 
 #toolMenuWrap{
 	color: #000;
