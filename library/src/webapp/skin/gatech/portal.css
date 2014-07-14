@@ -172,7 +172,7 @@ can set display:none if needed because the list-style is taking care of it*/
 	margin: 0;
 	background-color: #DBDBDB;
 	/*position:fixed; fixes the positioning of the navigation bar have to take out because longer menus mess things up*/
-	height:900px;/*makes the div element color extend all the way down. Need to make it stay up as well. Temporary fix doesn't work all the time.*/
+	height:900px;/*makes the div element color extend all the way down. Need to make it stay up as well. Temporary fix doesn't work all the time especially for navs with alot of left tabs.*/
 }
 
 #toolMenuWrap:hover{
@@ -205,7 +205,7 @@ site types are a local setting - adjust */
 	font-size: x-small;
 	margin: 0px;
 	padding: 0;
-	width: auto;
+	width: 100%;
 	clear: both;
 	top: 0;
 	text-align: center;
@@ -749,7 +749,7 @@ also hide if are going to be using icon links (as background of <a> nad <li>
 #toolMenu li.selectedTool {
 	display: block;
 	background-color: #EEB211;
-	padding: 2% 0 2% 0;
+	padding: 3% 3%;
 }
 
 #toolMenu li span{
