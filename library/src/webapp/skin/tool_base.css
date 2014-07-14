@@ -414,8 +414,7 @@ h4 + div.itemAction{
 }
 
 .navIntraTool li span a{
-	margin:0 !important;
-	padding:0 !important;
+	/*option buttons*/
 }
 /*for tool bar items that have icons*/
 .navIntraTool li span a img{
