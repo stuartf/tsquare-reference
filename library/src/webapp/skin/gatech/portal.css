@@ -2,9 +2,9 @@
 /********************************/
 /*@media all and (min-width: 300px) and (max-width: 480px) this is what gives responsive design for atleast screens*/
 /*@media only screen and (min-device-width: 300px) and (max-device-width: 480px) attempt at device presentation*/
-@media all and (min-width: 300px) and (max-width: 480px) {
-
-
+/*@media all and (min-width: 300px) and (max-width: 480px) */
+@media all and (max-device-width: 767px), all and (max-width: 449px) {
+/*I think this may fix it all!*/
 #portalOuterContainer {
 	width: 420px;
 }
