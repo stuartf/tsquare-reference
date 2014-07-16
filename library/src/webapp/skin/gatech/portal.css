@@ -5,8 +5,9 @@
 /*@media all and (min-width: 300px) and (max-width: 480px) */
 @media all and (max-device-width: 767px), all and (max-width: 449px) {
 /*I think this may fix it all!*/
+
 #portalOuterContainer {
-	 position:static;
+	 	position:static;
 		float:none;
 		clear:both;
 		width:auto;
@@ -16,6 +17,16 @@
 		min-height:0
 }
 
+#portalContainer{
+		position:static;
+		float:none;
+		clear:both;
+		width:auto;
+		height:auto;
+		overflow:visible;
+		min-width:0;
+		min-height:0
+}
 
 #toolMenuWrap{
 	color: #000;
@@ -73,7 +84,7 @@
 	float: left;
     margin: 1.5em 0;
 	margin-left: -11em !important;/*perfect width for landscape mode*/
-	min-width: 400px;
+	min-width: 320px;
 }
 
 #col1of2{
@@ -81,7 +92,7 @@
 	float: left;
 	margin: 1.5em 0;
     margin-left: -11em !important;/*perfect width for landscape mode*/
-	min-width: 400px;
+	min-width: 320px;
 }
 
 #col2of2{
@@ -89,7 +100,7 @@
 	margin: 1.5em 0;
 	float: left;
     margin-left: -11em !important;/*perfect width for landscape mode*/
-	min-width: 400px;
+	min-width: 320px;
 }
 
 
@@ -113,21 +124,16 @@ body a:link {
 	text-decoration: none !important;/*this has to be added to get rid of all underlines for the site*/
 }
 
-
-
-
-
-
-
-
 /*PART 1 - MAIN LAYOUT BLOCKS*/
 
 /*outer wrapper for portal content (decorative - child is #portalContainer )*/
 #portalOuterContainer{
+	width: 100%;
 }
 
 /*inner wrapper for portal content (decorative - children are #header #container and #footer )*/
 #portalContainer{
+	width:100%;
 }
 
 /*wrapper masthead  and site navigation 
