@@ -167,7 +167,7 @@ table.listHier th{
 }
 
 table.listHier td{
-	/*padding: .3em; eliminated for space between announcements*/
+	padding: .7em;
 }
 
 table.listHier td img{
