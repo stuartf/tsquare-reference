@@ -394,9 +394,9 @@ table.calendar .event{
 }
 /*skinned cell of standard tab. data table*/
 .listHier td{
-	padding: .4em;
-	font-size: 1.1em;
-	color: #333;
+	padding: .7em;
+	/*font-size: 1.1em;
+	color: #333;*/
 }
 
 /*lines - provides rules and hover effects on some tables*/
@@ -405,7 +405,7 @@ table.lines{
 }
 
 table.lines tr:hover{
-	background-color: #ffc;
+	background-color: #F8F8F8;
 }
 
 table.lines tr{

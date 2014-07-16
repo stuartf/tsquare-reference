@@ -713,27 +713,12 @@ html>body .dhtml_more_tabs {
 /*PART 5 - SITE TOOL LINKS  - children of #toolMenuWrap	*/
 /*wrapper for ul that lists the links to tools*/
 #container #toolMenu {
-	width: 150px;
+	width: 170px;
 	padding: 0 0 11px 0;
 	margin: 0;
-	/* background: url(images/mytoolsfooter.gif) bottom left no-repeat; */
 }
 
-#container #toolMenu ul {
-	/* background: url(images/tools.gif) no-repeat top left; */
-}
-
-#container.workspace #toolMenu ul {
-	/*background: url(images/workspace-tools.gif) no-repeat top left;*/
-}
-
-#container.project #toolMenu ul {
-	/*background: url(images/project-tools.gif) no-repeat top left;*/
-}
-
-#container.course #toolMenu ul {
-	/* background: url(images/course-tools.gif) no-repeat top left; */
-}
+/*deleted four rules of pictures.*/
 
 #toolMenu ul{
 	width: 100%;
