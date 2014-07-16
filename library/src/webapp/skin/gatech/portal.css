@@ -84,7 +84,7 @@
 	float: left;
     margin: 1.5em 0;
 	margin-left: -14em !important;/*perfect width for landscape mode*/
-	min-width: 320px;
+	min-width: 300px !important;
 }
 
 #col1of2{
@@ -92,7 +92,7 @@
 	float: left;
 	margin: 1.5em 0;
     margin-left: -14em !important;/*perfect width for landscape mode*/
-	min-width: 320px;
+	min-width: 300px !important;
 }
 
 #col2of2{
@@ -100,7 +100,7 @@
 	margin: 1.5em 0;
 	float: left;
     margin-left: -14em !important;/*perfect width for landscape mode*/
-	min-width: 320px;
+	min-width: 300px !important;
 }
 
 
