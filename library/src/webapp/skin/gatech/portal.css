@@ -33,13 +33,13 @@
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 480px;
+    width: 320px;
 	height:100% !important;/*needed to not get 900px*/
 }
 
 #toolMenu li{
-	width: 480px !important;
-	padding: 4% 5%;
+	width: 320px !important;
+	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
 	border-radius: 1px;
@@ -83,7 +83,7 @@
 	width: 100%;
 	float: left;
     margin: 1.5em 0;
-	margin-left: -11em !important;/*perfect width for landscape mode*/
+	margin-left: -14em !important;/*perfect width for landscape mode*/
 	min-width: 320px;
 }
 
@@ -91,7 +91,7 @@
 	width: 50%;
 	float: left;
 	margin: 1.5em 0;
-    margin-left: -11em !important;/*perfect width for landscape mode*/
+    margin-left: -14em !important;/*perfect width for landscape mode*/
 	min-width: 320px;
 }
 
@@ -99,7 +99,7 @@
 	width: 50%;
 	margin: 1.5em 0;
 	float: left;
-    margin-left: -11em !important;/*perfect width for landscape mode*/
+    margin-left: -14em !important;/*perfect width for landscape mode*/
 	min-width: 320px;
 }
 
