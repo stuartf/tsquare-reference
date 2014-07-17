@@ -6,7 +6,7 @@
 @media all and (max-device-width: 767px), all and (max-width: 449px) {
 /*I think this may fix it all!*/
 @-ms-viewport{
-	width: 320px;
+	width: 480px;
 }
 #portalOuterContainer {
 	 	position:static;
