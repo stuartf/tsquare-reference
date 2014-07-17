@@ -115,7 +115,8 @@
 /* All Smartphones in portrait and landscape ----------- */
 
 /*Smartphones 320x480 in landscape ----------- */
-@media all and (min-device-width: 321px) and (max-device-width: 481px), all and (min-width: 321px) and (max-width: 481px){
+/*@media all and (min-device-width: 321px) and (max-device-width: 481px), all and (min-width: 321px) and (max-width: 481px)*/
+@media all and (min-device-width: 321px) and (max-device-width: 380px), all and (min-width: 321px) and (max-width: 380px){
 
 #portalOuterContainer {
 	 	position:static;
@@ -150,12 +151,12 @@
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 480px !important;
+    width: 380px !important;
 	height:100% !important;
 }
 
 #toolMenu li{
-	width: 480px !important;
+	width: 380px !important;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -199,7 +200,7 @@
 	float: left;
     margin: 1.5em 0;
 	margin-left: -14em !important;
-	min-width: 460px !important;
+	min-width: 340px !important;
 }
 
 #col1of2{
@@ -207,7 +208,7 @@
 	float: left;
 	margin: 1.5em 0;
     margin-left: -14em !important;
-	min-width: 460px !important;
+	min-width: 340px !important;
 }
 
 #col2of2{
@@ -215,12 +216,12 @@
 	margin: 1.5em 0;
 	float: left;
     margin-left: -14em !important;
-	min-width: 460px !important;
+	min-width: 340px !important;
 
 }
 
 /*Portrait for iPhones or Portrait of 320px*/
-@media all and (max-device-width: 321px), all and (max-width: 321px){
+@media all and (max-device-width: 320px), all and (max-width: 320px){
 
 #portalOuterContainer {
 	 	position:static;
@@ -332,7 +333,7 @@
 
 
 /* Android(Samsung Galaxy) in portrait 380 X 685 ----------- */
-@media all and (min-device-width: 360px), all and (min-width: 360px){
+@media all and (min-device-width: 381px) and (max-device-width: 481px), all and (min-width: 381px) and (max-width: 481px){
 
 #portalOuterContainer {
 	 	position:static;
@@ -367,12 +368,12 @@
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 380px !important;
+    width: 480px !important;
 	height:100% !important;
 }
 
 #toolMenu li{
-	width: 380px !important;
+	width: 480px !important;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -416,7 +417,7 @@
 	float: left;
     margin: 1.5em 0;
 	margin-left: -14em !important;
-	min-width: 300px !important;
+	min-width: 460px !important;
 }
 
 #col1of2{
@@ -424,7 +425,7 @@
 	float: left;
 	margin: 1.5em 0;
     margin-left: -14em !important;
-	min-width: 360px !important;
+	min-width: 460px !important;
 }
 
 #col2of2{
@@ -432,7 +433,7 @@
 	margin: 1.5em 0;
 	float: left;
     margin-left: -14em !important;
-	min-width: 360px !important;/*Make sure its 20px smaller than the width*/
+	min-width: 460px !important;/*Make sure its 20px smaller than the width*/
 }
 
 }/*end of Galaxy in Portrait*/
