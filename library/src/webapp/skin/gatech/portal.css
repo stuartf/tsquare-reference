@@ -3,14 +3,14 @@
 /*@media all and (min-width: 300px) and (max-width: 480px) this is what gives responsive design for atleast screens*/
 /*@media only screen and (min-device-width: 300px) and (max-device-width: 480px) attempt at device presentation*/
 /*@media all and (min-width: 300px) and (max-width: 480px) */
-
-/*@media all and (max-device-width: 767px), all and (max-width: 449px) {
+@media all and (max-device-width: 767px), all and (max-width: 449px) {
+/*I think this may fix it all!*/
 
 #portalOuterContainer {
 	 	position:static;
 		float:none;
 		clear:both;
-		width:auto;
+		width:auto;/*switch back to auto later*/
 		height:auto;
 		overflow:visible;
 		min-width:0;
@@ -28,7 +28,7 @@
 		min-height:0
 }
 
-#siteNavWrapper{
+#siteNavWrapper{/*see what I need to do with this:*/
 	margin: 0;
 	padding: 0;
 	background: #4a6594;
@@ -40,7 +40,7 @@
 	margin: 0 auto;
 	background-color: #DBDBDB;
     width: 320px !important;
-	height:100% !important;
+	height:100% !important;/*needed to not get 900px*/
 }
 
 #toolMenu li{
@@ -49,6 +49,7 @@
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
 	border-radius: 1px;
+	/*transition-property: all 0.2s ease 0s;*/
 	-webkit-transition: all 0.2s ease;
 	-moz-transition: all 0.2s ease;
 	-o-transition: all 0.2s ease;
@@ -63,6 +64,7 @@
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
 	padding: 10px 5px;
 	border-radius: 1px;
+	/*transition-property: all 0.2s ease 0s;*/
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -71,6 +73,7 @@
     
 #siteLinkList li span {
 	display: block;
+	/*background: transparent url(images/tab-right.gif) no-repeat right top;*/
 	padding: 8px 13px 3px 2px;
 	margin: 0pt;
     font-size: .85em;
@@ -87,7 +90,7 @@
 	width: 100%;
 	float: left;
     margin: 1.5em 0;
-	margin-left: -14em !important;
+	margin-left: -14em !important;/*perfect width for landscape mode*/
 	min-width: 300px !important;
 }
 
@@ -95,7 +98,7 @@
 	width: 50%;
 	float: left;
 	margin: 1.5em 0;
-    margin-left: -14em !important;
+    margin-left: -14em !important;/*perfect width for landscape mode*/
 	min-width: 300px !important;
 }
 
@@ -103,273 +106,12 @@
 	width: 50%;
 	margin: 1.5em 0;
 	float: left;
-    margin-left: -14em !important;
+    margin-left: -14em !important;/*perfect width for landscape mode*/
 	min-width: 300px !important;
 }
 
 
-}*/
-
-/*end of media query*/
-/**********************************Test with different Style sheets for devices***********************************/
-/* All Smartphones in portrait and landscape ----------- */
-
-/*Smartphones 320x480 in landscape ----------- */
-@media all and (min-device-width: 321px) and (max-device-width: 481px), all and (min-width: 321px) and (max-width: 481px){
-
-#portalOuterContainer {
-	 	position:static;
-		float:none;
-		clear:both;
-		width:auto;
-		height:auto;
-		overflow:visible;
-		min-width:0;
-		min-height:0
-}
-
-#portalContainer{
-		position:static;
-		float:none;
-		clear:both;
-		width:auto;
-		height:auto;
-		overflow:visible;
-		min-width:0;
-		min-height:0
-}
-
-#siteNavWrapper{
-	margin: 0;
-	padding: 0;
-	background: #4a6594;
-}
-
-#toolMenuWrap{
-	color: #000;
-	padding: 0em 0em .5em 0em;
-	margin: 0 auto;
-	background-color: #DBDBDB;
-    width: 480px !important;
-	height:100% !important;
-}
-
-#toolMenu li{
-	width: 480px !important;
-	padding: 5% 0% !important;
-	border-top: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	border-radius: 1px;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-
-#siteLinkList li {
-    width:45% !important;
-	display:block;
-	float:left;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	padding: 10px 5px;
-	border-radius: 1px;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-    
-#siteLinkList li span {
-	display: block;
-	padding: 8px 13px 3px 2px;
-	margin: 0pt;
-    font-size: .85em;
-}
-
-#content{
-	padding: 0 .5em 0 .5em;
-	margin-top: 0em;
-    float: left; 
-}
-
-
-#col1{
-	width: 100%;
-	float: left;
-    margin: 1.5em 0;
-	margin-left: -14em !important;
-	min-width: 460px !important;
-}
-
-#col1of2{
-	width: 50%;
-	float: left;
-	margin: 1.5em 0;
-    margin-left: -14em !important;
-	min-width: 460px !important;
-}
-
-#col2of2{
-	width: 50%;
-	margin: 1.5em 0;
-	float: left;
-    margin-left: -14em !important;
-	min-width: 460px !important;
-
-}
-
-/*Portrait for iPhones or Portrait of 320px*/
-@media all and (max-device-width: 321px), all and (max-width: 321px){
-
-#portalOuterContainer {
-	 	position:static;
-		float:none;
-		clear:both;
-		width:auto;
-		height:auto;
-		overflow:visible;
-		min-width:0;
-		min-height:0
-}
-
-#portalContainer{
-		position:static;
-		float:none;
-		clear:both;
-		width:auto;
-		height:auto;
-		overflow:visible;
-		min-width:0;
-		min-height:0
-}
-
-#siteNavWrapper{
-	margin: 0;
-	padding: 0;
-	background: #4a6594;
-}
-
-#toolMenuWrap{
-	color: #000;
-	padding: 0em 0em .5em 0em;
-	margin: 0 auto;
-	background-color: #DBDBDB;
-    width: 320px !important;
-	height:100% !important;
-}
-
-#toolMenu li{
-	width: 320px !important;
-	padding: 5% 0% !important;
-	border-top: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	border-radius: 1px;
-	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
-	transition: all 0.2s ease;
-}
-
-#siteLinkList li {
-    width:45% !important;
-	display:block;
-	float:left;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	padding: 10px 5px;
-	border-radius: 1px;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-}
-    
-#siteLinkList li span {
-	display: block;
-	padding: 8px 13px 3px 2px;
-	margin: 0pt;
-    font-size: .85em;
-}
-
-#content{
-	padding: 0 .5em 0 .5em;
-	margin-top: 0em;
-    float: left; 
-}
-
-
-#col1{
-	width: 100%;
-	float: left;
-    margin: 1.5em 0;
-	margin-left: -14em !important;
-	min-width: 300px !important;
-}
-
-#col1of2{
-	width: 50%;
-	float: left;
-	margin: 1.5em 0;
-    margin-left: -14em !important;
-	min-width: 300px !important;
-}
-
-#col2of2{
-	width: 50%;
-	margin: 1.5em 0;
-	float: left;
-    margin-left: -14em !important;
-	min-width: 300px !important;/*Make sure its 20px smaller than the width*/
-}
-
-
-}/*end of portrait*/
-
-/***** ANDROID DEVICES *****/
-
-/* Android 240 X 320 ----------- */
-@media only screen
-and (max-width: 241px){
-/* YOUR STYLE GOES HERE */
-}
-
-/* Android(Samsung Galaxy) in portrait 380 X 685 ----------- */
-@media only screen
-and (min-width: 375px)
-and (max-width: 385px){
-/* YOUR STYLE GOES HERE */
-}
-
-/* Android(Samsung Galaxy) in Landscape 685 X  380 ----------- */
-@media only screen
-and (min-width: 680px)
-and (max-width: 690px){
-/* YOUR STYLE GOES HERE */
-}
-
-/* Kindle Portrait 600 X 1024 ----------- */
-@media only screen
-and (min-width: 595px)
-and (max-width: 610px){
-/* YOUR STYLE GOES HERE */
-}
-
-/* Kindle Landscape 1024 X 600 ----------- */
-@media only screen
-and (min-width: 1000px)
-and (max-width: 1030px){
-/* YOUR STYLE GOES HERE */
-}
-
-
-
-
-
-
-
-
-
+}/*end of media query*/
 /*End of Mobile Dev Section*/
 /********************************/
 
