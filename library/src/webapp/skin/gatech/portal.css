@@ -332,7 +332,7 @@
 
 
 /* Android(Samsung Galaxy) in portrait 380 X 685 ----------- */
-@media all and (max-device-width: 395px), all and (max-width: 395px){
+@media all and (min-device-width: 360px), all and (min-width: 360px){
 
 #portalOuterContainer {
 	 	position:static;
@@ -436,28 +436,6 @@
 }
 
 }/*end of Galaxy in Portrait*/
-
-/* Android(Samsung Galaxy) in Landscape 685 X  380 ----------- */
-@media only screen
-and (min-width: 680px)
-and (max-width: 690px){
-/* YOUR STYLE GOES HERE */
-}
-
-/* Kindle Portrait 600 X 1024 ----------- */
-@media only screen
-and (min-width: 595px)
-and (max-width: 610px){
-/* YOUR STYLE GOES HERE */
-}
-
-/* Kindle Landscape 1024 X 600 ----------- */
-@media only screen
-and (min-width: 1000px)
-and (max-width: 1030px){
-/* YOUR STYLE GOES HERE */
-}
-
 /*End of Mobile Dev Section*/
 /********************************/
 
