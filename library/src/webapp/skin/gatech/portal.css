@@ -51,12 +51,11 @@
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
 	border-radius: 1px;
-	transition-property: all 0.2s ease 0s;
-	transition: all 0.2s ease 0s;
-	-webkit-transition: all 0.2s ease 0s;
-	-o-transition: all 0.2s ease 0s;
-	-moz-transition: all 0.2s ease 0s;
-	
+	/*transition-property: all 0.2s ease 0s;*/
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 }
 
 #siteLinkList li {
@@ -67,11 +66,11 @@
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
 	padding: 10px 5px;
 	border-radius: 1px;
-	transition-property: all 0.2s ease 0s;
-	transition: all 0.3s ease 0s;
-	-webkit-transition: all 0.3s ease 0s;
-	-o-transition: all 0.3s ease 0s;
-	-moz-transition: all 0.3s ease 0s;
+	/*transition-property: all 0.2s ease 0s;*/
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
     
 #siteLinkList li span {
@@ -387,11 +386,12 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 	background: #EEB211;/*changed color*/
 	text-decoration: none;
 	border-radius: 0 0px 0 5px;
-	transition-property: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s; /*added transition effect for logout button*/
-	-webkit-transition: all 0.3s ease 0s;
-	-o-transition: all 0.3s ease 0s;
-	-moz-transition: all 0.3s ease 0s;
+	/*transition-property: all 0.3s ease 0s;*/
+	 /*added transition effect for logout button*/
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 #mastLogin a:hover{
@@ -531,11 +531,11 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	/* margin-right:2px; */ /*Added margin right in there to space out tiles*/
 	/*added tons in here padding, box-shadow, border etc and all the transition elements*/
 	border-radius: 1px;
-	transition-property: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
-	-webkit-transition: all 0.3s ease 0s;
-	-o-transition: all 0.3s ease 0s;
-	-moz-transition: all 0.3s ease 0s;
+	/*transition-property: all 0.3s ease 0s;*/
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
 }
 
 /*links to other sites*/
@@ -751,11 +751,11 @@ html>body .dhtml_more_tabs {
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
 	border-radius: 1px;
-	transition-property: all 0.2s ease 0s;
-	transition: all 0.2s ease 0s;
-	-webkit-transition: all 0.2s ease 0s;
-	-o-transition: all 0.2s ease 0s;
-	-moz-transition: all 0.2s ease 0s;
+	/*transition-property: all 0.2s ease 0s;*/
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+	transition: all 0.2s ease;
 	
 }
 
