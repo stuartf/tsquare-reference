@@ -1414,12 +1414,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 640px !important;
-	height:100% !important;
+    width: 640px;
+	height:100%;
 }
 
 #toolMenu li{
-	width: 500px !important;
+	width: 640px;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1462,24 +1462,24 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	width: 100%;
 	float: left;
     margin: 1.5em 0;
-	margin-left: -14em !important;
-	min-width: 620px !important;
+	margin-left: -14em;
+	min-width: 620px;
 }
 
 #col1of2{
 	width: 50%;
 	float: left;
 	margin: 1.5em 0;
-    margin-left: -14em !important;
-	min-width: 620px !important;
+    margin-left: -14em;
+	min-width: 620px;
 }
 
 #col2of2{
 	width: 50%;
 	margin: 1.5em 0;
 	float: left;
-    margin-left: -14em !important;
-	min-width: 620px !important;
+    margin-left: -14em;
+	min-width: 620px;
 }
 
 
@@ -1521,12 +1521,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 480px !important;
-	height:100% !important;
+    width: 480px;
+	height:100%;
 }
 
 #toolMenu li{
-	width: 480px !important;;
+	width: 480px;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1569,24 +1569,24 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	width: 100%;
 	float: left;
     margin: 1.5em 0;
-	margin-left: -14em !important;
-	min-width: 460px !important;
+	margin-left: -14em ;
+	min-width: 460px;
 }
 
 #col1of2{
 	width: 50%;
 	float: left;
 	margin: 1.5em 0;
-    margin-left: -14em !important;
-	min-width: 460px !important;
+    margin-left: -14em;
+	min-width: 460px;
 }
 
 #col2of2{
 	width: 50%;
 	margin: 1.5em 0;
 	float: left;
-    margin-left: -14em !important;
-	min-width: 460px !important;
+    margin-left: -14em;
+	min-width: 460px;
 }
 
 
@@ -1630,12 +1630,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 380px !important;
-	height:100% !important;
+    width: 380px;
+	height:100%;
 }
 
 #toolMenu li{
-	width: 380px !important;;
+	width: 380px;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1678,24 +1678,24 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	width: 100%;
 	float: left;
     margin: 1.5em 0;
-	margin-left: -14em !important;
-	min-width: 360px !important;
+	margin-left: -14em;
+	min-width: 360px;
 }
 
 #col1of2{
 	width: 50%;
 	float: left;
 	margin: 1.5em 0;
-    margin-left: -14em !important;
-	min-width: 360px !important;
+    margin-left: -14em;
+	min-width: 360px;
 }
 
 #col2of2{
 	width: 50%;
 	margin: 1.5em 0;
 	float: left;
-    margin-left: -14em !important;
-	min-width: 360px !important;
+    margin-left: -14em;
+	min-width: 360px;
 }
 
 
@@ -1737,12 +1737,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 320px !important;
-	height:100% !important;
+    width: 320px;
+	height:100%;
 }
 
 #toolMenu li{
-	width: 320px !important;;
+	width: 320px;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1785,24 +1785,24 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	width: 100%;
 	float: left;
     margin: 1.5em 0;
-	margin-left: -14em !important;
-	min-width: 300px !important;
+	margin-left: -14em;
+	min-width: 300px;
 }
 
 #col1of2{
 	width: 50%;
 	float: left;
 	margin: 1.5em 0;
-    margin-left: -14em !important;
-	min-width: 300px !important;
+    margin-left: -14em;
+	min-width: 300px;
 }
 
 #col2of2{
 	width: 50%;
 	margin: 1.5em 0;
 	float: left;
-    margin-left: -14em !important;
-	min-width: 300px !important;
+    margin-left: -14em;
+	min-width: 300px;
 }
 
 
