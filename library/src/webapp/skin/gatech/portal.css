@@ -1374,6 +1374,8 @@ a[class*='icon-sakai-lti-wimba-'] {
 a.icon-sakai-lti-gatech-digitalmedia {
   background-image: url(../../image/silk/film.png);
 }
+
+
 /*******************Mobile Dev Section****************************/
 
 
@@ -1412,7 +1414,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 500px !important;
+    width: 640px !important;
 	height:100% !important;
 }
 
@@ -1461,7 +1463,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	float: left;
     margin: 1.5em 0;
 	margin-left: -14em !important;
-	min-width: 480px !important;
+	min-width: 620px !important;
 }
 
 #col1of2{
@@ -1469,7 +1471,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	float: left;
 	margin: 1.5em 0;
     margin-left: -14em !important;
-	min-width: 480px !important;
+	min-width: 620px !important;
 }
 
 #col2of2{
@@ -1477,7 +1479,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	margin: 1.5em 0;
 	float: left;
     margin-left: -14em !important;
-	min-width: 480px !important;
+	min-width: 620px !important;
 }
 
 
@@ -1519,12 +1521,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 480px;
+    width: 480px !important;
 	height:100% !important;
 }
 
 #toolMenu li{
-	width: 480px!important;;
+	width: 480px !important;;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1628,12 +1630,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 380px;
+    width: 380px !important;
 	height:100% !important;
 }
 
 #toolMenu li{
-	width: 380px!important;;
+	width: 380px !important;;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1735,12 +1737,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 380px;
+    width: 320px !important;
 	height:100% !important;
 }
 
 #toolMenu li{
-	width: 380px!important;;
+	width: 320px !important;;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1784,7 +1786,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	float: left;
     margin: 1.5em 0;
 	margin-left: -14em !important;
-	min-width: 360px !important;
+	min-width: 300px !important;
 }
 
 #col1of2{
@@ -1792,7 +1794,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	float: left;
 	margin: 1.5em 0;
     margin-left: -14em !important;
-	min-width: 360px !important;
+	min-width: 300px !important;
 }
 
 #col2of2{
@@ -1800,7 +1802,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	margin: 1.5em 0;
 	float: left;
     margin-left: -14em !important;
-	min-width: 360px !important;
+	min-width: 300px !important;
 }
 
 
