@@ -1379,7 +1379,10 @@ a.icon-sakai-lti-gatech-digitalmedia {
 /*******************Mobile Dev Section****************************/
 
 
-@media all and (max-device-width: 675px), all and (max-width: 675px) {
+@media all and (max-device-width: 767px), all and (max-width: 760px) {
+@-ms-viewport {
+    width: 640px;
+}
 
 #portalOuterContainer {
 	 	position:static;
@@ -1485,7 +1488,10 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 }/*end of media query*/
 
-@media all and (max-device-width: 550px), all and (max-width: 550px) {
+@media all and (max-device-width: 500px), all and (max-width: 498px) {
+@-ms-viewport {
+    width: 480px;
+  }
 
 
 #portalOuterContainer {
@@ -1594,8 +1600,10 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 
 
-@media all and (max-device-width: 400px), all and (max-width: 400px) {
-
+@media all and (max-device-width: 400px), all and (max-width: 398px) {
+@-ms-viewport {
+    width: 380px;
+  }
 
 #portalOuterContainer {
 	 	position:static;
@@ -1701,8 +1709,10 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 }/*end of media Query*/
 
-@media all and (max-device-width: 340px), all and (max-width: 340px) {
-
+@media all and (max-device-width: 340px), all and (max-width: 338px) {
+@-ms-viewport {
+    width: 320px;
+  }
 
 #portalOuterContainer {
 	 	position:static;
