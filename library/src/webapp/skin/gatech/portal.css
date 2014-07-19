@@ -1379,7 +1379,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 /*******************Mobile Dev Section****************************/
 
 
-@media all and (max-device-width: 767px), all and (max-width: 760px) {
+@media all and (max-device-width: 675px), all and (max-width: 675px) {
 
 #portalOuterContainer {
 	 	position:static;
@@ -1485,7 +1485,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 }/*end of media query*/
 
-@media all and (max-device-width: 500px), all and (max-width: 498px) {
+@media all and (max-device-width: 550px), all and (max-width: 550px) {
 
 
 #portalOuterContainer {
@@ -1594,7 +1594,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 
 
-@media all and (max-device-width: 400px), all and (max-width: 398px) {
+@media all and (max-device-width: 400px), all and (max-width: 400px) {
 
 
 #portalOuterContainer {
@@ -1701,7 +1701,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 }/*end of media Query*/
 
-@media all and (max-device-width: 340px), all and (max-width: 338px) {
+@media all and (max-device-width: 340px), all and (max-width: 340px) {
 
 
 #portalOuterContainer {
