@@ -1377,12 +1377,9 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 
 /*******************Mobile Dev Section****************************/
+/*****************************************************************/
 
-
-@media all and (max-device-width: 767px), all and (max-width: 760px) {
-@-ms-viewport {
-    width: 640px;
-}
+@media all and (max-device-width: 675px), all and (max-width: 675px) {
 
 #portalOuterContainer {
 	 	position:static;
@@ -1488,10 +1485,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 }/*end of media query*/
 
-@media all and (max-device-width: 500px), all and (max-width: 498px) {
-@-ms-viewport {
-    width: 480px;
-  }
+@media all and (max-device-width: 550px), all and (max-width: 550px) {
 
 
 #portalOuterContainer {
@@ -1600,10 +1594,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 
 
-@media all and (max-device-width: 400px), all and (max-width: 398px) {
-@-ms-viewport {
-    width: 380px;
-  }
+@media all and (max-device-width: 400px), all and (max-width: 400px) {
 
 #portalOuterContainer {
 	 	position:static;
@@ -1638,12 +1629,12 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	padding: 0em 0em .5em 0em;
 	margin: 0 auto;
 	background-color: #DBDBDB;
-    width: 380px;
+    width: 360px;
 	height:100%;
 }
 
 #toolMenu li{
-	width: 380px;
+	width: 360px;
 	padding: 5% 0% !important;
 	border-top: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
@@ -1687,7 +1678,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	float: left;
     margin: 1.5em 0;
 	margin-left: -14em;
-	min-width: 360px;
+	min-width: 340px;
 }
 
 #col1of2{
@@ -1695,7 +1686,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	float: left;
 	margin: 1.5em 0;
     margin-left: -14em;
-	min-width: 360px;
+	min-width: 340px;
 }
 
 #col2of2{
@@ -1703,16 +1694,14 @@ a.icon-sakai-lti-gatech-digitalmedia {
 	margin: 1.5em 0;
 	float: left;
     margin-left: -14em;
-	min-width: 360px;
+	min-width: 340px;
 }
 
 
 }/*end of media Query*/
 
-@media all and (max-device-width: 340px), all and (max-width: 338px) {
-@-ms-viewport {
-    width: 320px;
-  }
+@media all and (max-device-width: 340px), all and (max-width: 340px) {
+
 
 #portalOuterContainer {
 	 	position:static;
