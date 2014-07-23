@@ -391,6 +391,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 /*list elements - children are <span> and <a>*/
 #siteLinkList li {
+	white-space: nowrap;
 	position: relative;
 	display:block;
 	float:left;
