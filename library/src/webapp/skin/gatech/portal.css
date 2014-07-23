@@ -348,7 +348,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 /*wrapper for the site links and site <select> blocks - children are #siteNav and #tabNav */
 #siteNav{
 	width:100%;
-	background: #4a6594;
+	background: #343538;
 	margin: 0;
 	padding: 0;
 }
@@ -360,6 +360,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	float:left;
 	margin: 0;
 	padding: 0;
+	width:100%;
 }
 
 /*wrapper for the site <select> that is displayed when more than x sites are in the link list*/
@@ -395,6 +396,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	margin: 0;	
 	padding: 0 0 0 0px;
 	float: left;
+	width:100%;
 }
 
 /*list elements - children are <span> and <a>*/
@@ -1388,7 +1390,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:640px;
+		min-width:0;
 		min-height:0
 }
 
@@ -1399,7 +1401,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:640px;
+		min-width:0;
 		min-height:0
 }
 
@@ -1446,7 +1448,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
     
 #siteLinkList li span {
 	display: block;
-	padding: 8px 13px 3px 2px;
+	padding: 10px 50% 10px 25%;
 	margin: 0pt;
     font-size: .85em;
 }
@@ -1495,7 +1497,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:480px;
+		min-width:0;
 		min-height:0
 }
 
@@ -1506,7 +1508,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:480px;
+		min-width:0;
 		min-height:0
 }
 
@@ -1553,7 +1555,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
     
 #siteLinkList li span {
 	display: block;
-	padding: 8px 13px 3px 2px;
+	padding: 10px 50% 10px 25%;
 	margin: 0pt;
     font-size: .85em;
 }
@@ -1603,7 +1605,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:360px;
+		min-width:0;
 		min-height:0
 }
 
@@ -1614,7 +1616,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:360px;
+		min-width:0;
 		min-height:0
 }
 
@@ -1661,7 +1663,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
     
 #siteLinkList li span {
 	display: block;
-	padding: 8px 13px 3px 2px;
+	padding: 10px 50% 10px 25%;
 	margin: 0pt;
     font-size: .85em;
 }
@@ -1710,7 +1712,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:320px;
+		min-width:0;
 		min-height:0
 }
 
@@ -1721,7 +1723,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 		width:auto;
 		height:auto;
 		overflow:visible;
-		min-width:320px;
+		min-width:0;
 		min-height:0
 }
 
