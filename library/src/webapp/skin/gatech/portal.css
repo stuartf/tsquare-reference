@@ -410,6 +410,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	font-weight: 700;
 	display: block;
 	float: left;
+	padding: 10px 25% 10px 25%;
 	
 }
 
@@ -427,8 +428,8 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 #siteLinkList li span {
 	display: block;
-	padding: 10px 25% 10px 25%;
 	margin: 0pt;
+	width: 100%;
 }
 
 /*the current sites' link - consists of the li and a*/
