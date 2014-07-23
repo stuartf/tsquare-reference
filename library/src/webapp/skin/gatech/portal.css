@@ -409,7 +409,6 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	width:100%;
 	color: #fff;
 	font-weight: 700;
-	text-decoration: none;
 	display: block;
 	float: left;
 	
@@ -431,7 +430,6 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	display: block;
 	padding: 10px 25% 10px 25%;
 	margin: 0pt;
-	width: 100%;
 }
 
 /*the current sites' link - consists of the li and a*/
