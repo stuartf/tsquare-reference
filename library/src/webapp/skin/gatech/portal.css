@@ -406,7 +406,6 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 /*links to other sites*/
 #siteLinkList li a, #siteLinkList li a:link, #siteLinkList li a:visited {
-	width:100%;
 	color: #fff;
 	font-weight: 700;
 	display: block;
