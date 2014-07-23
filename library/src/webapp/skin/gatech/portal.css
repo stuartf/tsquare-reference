@@ -419,7 +419,6 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 /*links to other sites*/
 #siteLinkList li a, #siteLinkList li a:link, #siteLinkList li a:visited {
-	width:100%;
 	color: #fff;
 	font-weight: 700;
 	text-decoration: none;
@@ -448,8 +447,9 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 #siteLinkList li span {
 	display: block;
 	/*background: transparent url(images/tab-right.gif) no-repeat right top;*/
-	padding: 8px 13px 3px 2px;
+	padding: 9px 25%;
 	margin: 0pt;
+	width: 100%;
 }
 
 /*the current sites' link - consists of the li and a*/
