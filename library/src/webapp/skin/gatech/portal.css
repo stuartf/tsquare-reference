@@ -28,11 +28,10 @@ body a:link {
  two possible states - logged in headerMax, not logged in - headerMin*/
 #headerMax, #headerMin{
 	width: 100%;
-	/* margin: 1em auto 0 auto; */
 	margin: 0;
 	padding: 0;
 	height:100%;
-	background: #343538;/*changed background color of home page*/
+	background: #343538;
 	overflow:visible;
 }
 #headerMin{
@@ -76,8 +75,7 @@ can set display:none if needed because the list-style is taking care of it*/
 	padding: 0em 0em .5em 0em;
 	margin: 0;
 	background-color: #DBDBDB;
-	/*position:fixed; fixes the positioning of the navigation bar have to take out because longer menus mess things up*/
-	height:900px;/*makes the div element color extend all the way down. Need to make it stay up as well. Temporary fix doesn't work all the time especially for navs with alot of left tabs.*/
+	height:900px;
 }
 
 #toolMenuWrap:hover{
@@ -116,7 +114,7 @@ site types are a local setting - adjust */
 	text-align: center;
 	background-color: #343538;
 	position:relative;
-	z-index:1;/*added position and z-index to footer to allow it to stay on top for now*/
+	z-index:1;
 }
 #footer.sakaiCopyrightInfo {
 	color: #fff;
@@ -185,7 +183,7 @@ site types are a local setting - adjust */
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	background: #343538;/*New background color*/
+	background: #343538;
 	overflow: hidden;
 	background-image: url(http://www.gatech.edu/sites/all/themes/gt/images/logos/logo-gt.png);
 	background-position: 0px 0px;
@@ -205,7 +203,6 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 
 /*the portal outputs an image that can be treated here or hidden with display:none*/
 #mastLogo img{
-	/* margin: 1em .5em; */
 	margin: 0;
 	background: #4a6594;
 }
@@ -223,7 +220,6 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 
 /*the portal outputs an image that can be treated here or hidden with display:none*/
 #mastBanner img{
-	/* margin: 1em .5em; */
 	margin: 0;
 	padding: 0;
 	background: #4a6594;
@@ -238,11 +234,9 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 	float: right;
 	text-align: right;
 	vertical-align: top;
-	/*background: #4a6594 url(images/newlogo.gif) no-repeat;*/
 	margin: 2px 0 0 0; 
-	/*padding: 0 10px 0 0;*/
 	width: 7em;
-	height: 80px; /*changed height a little to uncrowd logout button*/
+	height: 80px; 
 }
 
 /*the anchor for the login link for CAS above can be an image - treated here*/
@@ -259,12 +253,9 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 	font-weight: 700;
 	margin: 0;
 	padding: 10px 12px;
-	/*border: 1px solid #001c3a;*/
-	background: #EEB211;/*changed color*/
+	background: #EEB211;
 	text-decoration: none;
 	border-radius: 0 0px 0 5px;
-	/*transition-property: all 0.3s ease 0s;*/
-	 /*added transition effect for logout button*/
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -272,11 +263,10 @@ that can be used or hidden,can also use a background:url(images/<image name>.<ex
 }
 
 #mastLogin a:hover{
-	color: #000; /*changed login hover colors:*/;
+	color: #000;
 	text-decoration: none;
 	margin: 0;
-	padding: 2px 15px 55px 25px;/*added lengthing on right side of logout */
-	/*border: 1px solid #001c3a;*/
+	padding: 2px 15px 55px 25px;
 	background: #fff;
 }
 
@@ -406,11 +396,8 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	float:left;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	padding: 10px 5px;
-	/* margin-right:2px; */ /*Added margin right in there to space out tiles*/
-	/*added tons in here padding, box-shadow, border etc and all the transition elements*/
+	padding: 9px 5px;
 	border-radius: 1px;
-	/*transition-property: all 0.3s ease 0s;*/
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
@@ -419,6 +406,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 /*links to other sites*/
 #siteLinkList li a, #siteLinkList li a:link, #siteLinkList li a:visited {
+	width:100%;
 	color: #fff;
 	font-weight: 700;
 	text-decoration: none;
@@ -429,11 +417,6 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 #siteLinkList li a:hover {
 	text-decoration: none;
-	/*background-color: #EEB211;
-	transition: all 0.5s ease 0s;
-	-webkit-transition: all 0.5s ease 0s;
-	-o-transition: all 0.5s ease 0s;
-	-moz-transition: all 0.5s ease 0s; don't need anymore*/
 
 }
 /*completely new addition to the code*/
@@ -446,8 +429,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 #siteLinkList li span {
 	display: block;
-	/*background: transparent url(images/tab-right.gif) no-repeat right top;*/
-	padding: 9px 25%;
+	padding: 10px 25% 10px 25%;
 	margin: 0pt;
 	width: 100%;
 }
@@ -458,13 +440,13 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	#siteLinkList li.selectedTab a:link,
 	#siteLinkList li.selectedTab a:visited,
 	#siteLinkList li.selectedTab a:hover {
-	color: #fff;/*changed selected text color to white removed font-weight since inherited. Removed Background images*/
+	color: #fff;
 	text-decoration: none;
 	border-width: 0;
 }
 
 #siteLinkList li.selectedTab a span{
-	color: #fff;/*background:transparent url(images/tab-right-selected.gif) no-repeat scroll right top; padding: 8px 11px 5px 0; Eliminated these */
+	color: #fff;
 }
 
 #siteLinkList li.selectedTab {
