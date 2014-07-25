@@ -399,6 +399,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	padding: 9px 1%;
 	white-space: nowrap;
 	border-radius: 1px;
+	min-width: 80px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
