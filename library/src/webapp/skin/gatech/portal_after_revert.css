@@ -386,7 +386,6 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	margin: 0;	
 	padding: 0 0 0 0px;
 	float: left;
-	width: 100%;
 }
 
 /*list elements - children are <span> and <a>*/
@@ -396,8 +395,11 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	float:left;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	padding: 14px 25px;
+	padding: 10px 5px;
+	/* margin-right:2px; */ /*Added margin right in there to space out tiles*/
+	/*added tons in here padding, box-shadow, border etc and all the transition elements*/
 	border-radius: 1px;
+	/*transition-property: all 0.3s ease 0s;*/
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
 	-o-transition: all 0.3s ease;
