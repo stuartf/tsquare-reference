@@ -391,13 +391,13 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 
 /*list elements - children are <span> and <a>*/
 #siteLinkList li {
-	white-space: nowrap;
 	position: relative;
 	display:block;
 	float:left;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	padding: 9px 5px;
+	padding: 9px 1%;
+	white-space: nowrap;
 	border-radius: 1px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
