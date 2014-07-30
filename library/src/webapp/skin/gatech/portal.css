@@ -397,7 +397,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	float:left;
 	border: 1px solid rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 0 rgba(255, 255, 255, 0.1) inset;
-	padding: 14px 25px;
+	padding: 10px 14px;
 	border-radius: 1px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -411,7 +411,7 @@ so for example <div class="tabHolder workspace"> so that different site types ca
 	font-weight: 700;
 	display: block;
 	float: left;
-	padding: 0 0 0 11px;
+	padding: 4px 11px 4px 11px;
 	
 }
 
@@ -981,7 +981,6 @@ div#privacy_overlay {
 }
 #container.sakaiMinimizePageNavigation #toolMenu{
 	width:22px;
-  /*background: url("images/collapsed-footer.gif") no-repeat scroll left bottom transparent;*/
 }
 
 #container.sakaiMinimizePageNavigation #toolMenu ul {
@@ -1011,7 +1010,7 @@ div#privacy_overlay {
 	margin-left:30px;/*just changed one pixel to make even*/
 }
 .sakaiMinimizeSiteNavigation #siteNavWrapper{
-	display:none;/*added semi-colon*/
+	display:none;
 }
 .sakaiMinimizeSiteNavigation #headerMax{
 	padding:0;
@@ -1022,9 +1021,7 @@ div#privacy_overlay {
 	display:block;
     position:relative;
     width:100%;
-    
-	height:16px;/*made even number again*/
-    
+	height:16px;    
 	text-align:right;
 }
 /** Portal Timeout **/
@@ -1041,7 +1038,6 @@ div#privacy_overlay {
     padding: 5px 5px 5px 10px;
     border-radius: 5px;
     font-weight: 700;
-    /*added different border color and border radius*/
 }
 /* PART 9 - Tool Icons */
 
