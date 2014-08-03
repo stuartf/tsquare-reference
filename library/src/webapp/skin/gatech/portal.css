@@ -1358,7 +1358,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 /*****************************************************************/
 
 @media all and (max-device-width: 570px), all and (max-width: 570px) {
-@-ms-viewport { width: device-width; }
+
 #portalOuterContainer {
 	 	position:static;
 		float:none;
@@ -1465,7 +1465,8 @@ a.icon-sakai-lti-gatech-digitalmedia {
 }/*end of media query*/
 
 @media all and (max-device-width: 500px), all and (max-width: 500px) {
-@-ms-viewport { width: device-width; }
+
+
 #portalOuterContainer {
 	 	position:static;
 		float:none;
@@ -1574,7 +1575,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 
 @media all and (max-device-width: 400px), all and (max-width: 400px) {
-@-ms-viewport { width: device-width; }
+
 
 #portalOuterContainer {
 	 	position:static;
@@ -1683,7 +1684,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 
 
 @media all and (max-device-width: 370px), all and (max-width: 370px) {
-@-ms-viewport { width: device-width; }
+
 #portalOuterContainer {
 	 	position:static;
 		float:none;
@@ -1790,7 +1791,7 @@ a.icon-sakai-lti-gatech-digitalmedia {
 }/*end of media Query*/
 
 @media all and (max-device-width: 340px), all and (max-width: 340px) {
-@-ms-viewport { width: device-width; }
+
 
 #portalOuterContainer {
 	 	position:static;
