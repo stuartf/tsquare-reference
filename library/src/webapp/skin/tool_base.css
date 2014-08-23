@@ -12,6 +12,11 @@ testing as this browser in some configurations will sometimes apply these defini
 	padding: 0 !important;
 }
 
+body a:link {
+	text-decoration: none !important;/*this has to be added to get rid of all underlines for the site*/
+}
+
+
 	h3, h4, h5, h6{
 	width: 50%;
 }
@@ -20,8 +25,10 @@ testing as this browser in some configurations will sometimes apply these defini
 	display: none;
 }
 
+
+
 	a:link, a:visited{
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
 
 	table{
@@ -76,7 +83,7 @@ iframe{
 }
 
 table{
-	font-size: 1em;
+	font-size: 1.1em;/*increased font size of table for announcements etc*/
 }
 code {
 	font-family: verdana, arial, helvetica, sans-serif;
@@ -87,9 +94,9 @@ code {
 /*only child of body (example: any tool)*/
 .portletBody{
 	padding: 1px 1px 1em 1px;
-	border-width: 0px;
+	/*border-width: 0px;
 	border-color: #fff;
-	border-style: solid;
+	border-style: solid; gets rid of border around portlet body may not need*/
 }
 .helpBody {
 	padding: 0 1em 1em 1em
@@ -156,11 +163,11 @@ table.listHier th{
 	font-weight: normal;
 	text-align: left;
 	white-space: nowrap;
-	padding: .3em;
+	padding: .8em;
 }
 
 table.listHier td{
-	padding: .3em;
+	padding: .8em;
 }
 
 table.listHier td img{
@@ -407,8 +414,7 @@ h4 + div.itemAction{
 }
 
 .navIntraTool li span a{
-	margin:0 !important;
-	padding:0 !important;
+	/*option buttons*/
 }
 /*for tool bar items that have icons*/
 .navIntraTool li span a img{
