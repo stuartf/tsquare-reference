@@ -135,7 +135,7 @@ see: http://www.quirksmode.org/bugreports/archives/2005/07/Wrapped_inlinenowrap_
 	background: #343538;
 	border: 4px solid #343538;
 	color: #fff;
-	border-radius: 2px;/*changed background color, border width and color, and text color. Added border-radius this changes the option button*/
+	border-radius: 2px;
 	font-weight: 400;
 	transition: all 0.2s ease 0s;
 	-webkit-transition: all 0.2s ease 0s;
@@ -159,7 +159,7 @@ see: http://www.quirksmode.org/bugreports/archives/2005/07/Wrapped_inlinenowrap_
 	background: #343538;
 	border: 4px solid #343538;
 	color: #fff;
-	border-radius: 2px;/*changed background color, border width and color, and text color. Added border-radius this changes the option button*/
+	border-radius: 2px;
 	font-weight: 400;
 }
 
@@ -390,7 +390,6 @@ table.calendar .event{
 /*skinned header of standard tab. data table*/
 .listHier th{
 	background-color: #eee;
-	/* eliminated border around announcement header table*/
 }
 /*skinned cell of standard tab. data table*/
 .listHier td{
@@ -508,7 +507,6 @@ tr td.arrowHere{
 
 tr#selectedReorder td.arrowHere{
 /*	can give this an image if needed*/
-/*	background: url(images/arrowhere.gif) center .5em no-repeat*/
 }
 
 .moveUp, .moveDown{
@@ -552,10 +550,8 @@ h4,h5,h6 {
 }
 h3,h4,h5{ 
 	color: #555; 
-	/*padding: 0; eliminated as well*/
 	font-weight: bold; 
 	font-family: Arial,Helvetica,sans-serif; 
-	/*margin: 1em 0 0 0; eliminated to add more space*/
 	background-color: transparent !important; 
 } 
 
@@ -563,10 +559,10 @@ h3,h4,h5{
 /*want to make them look like normal text - but structure the content*/
 /*see: resources, any legacy list*/
 .listHier th h3,.listHier th h4,.listHier th h5,.listHier th h6,.listHier td h3,.listHier td h4,.listHier td h5,.listHier td h6{
-	margin: 2% 0%;/*added more spacing between announcements*/
+	margin: 2% 0%;
 	padding: 0;
 	color:#000;
-	font-size: 1.1em;/*increased announcement size a little*/
+	font-size: 1.1em;
 	background: none;
 	font-weight: normal;
 	font-family: 'Trebuchet MS',Verdana,Geneva,Arial,Helvetica,sans-serif !important;
@@ -641,8 +637,6 @@ textarea:focus{
 	padding:0;
 	margin: 0;
 	line-height: 1.5em;
-	/* border-top:1px solid #eee; */
-	/* border-bottom:1px solid #eee; */
 	text-align: left;
 	font-size: .9em;
 	clear:both;
@@ -653,9 +647,10 @@ textarea:focus{
 * html .navIntraTool{
 	font-size:.85em;
 }
+
 .navIntraTool:hover{
-	/* border-bottom:1px solid silver; */
 }
+
 .navIntraTool .searchField{
 	border:1px solid silver;
 	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
@@ -848,7 +843,6 @@ table.hierItemBlock td h4,table.hierItemBlock td h5,table.hierItemBlock td h6,
 	overflow: auto;
 	overflow-y: auto;
 	overflow-x: visible;
-	/* This overflow is for Netscape*/
 	overflow: -moz-scrollbars-vertical;
 }
 
@@ -917,7 +911,6 @@ table.hierItemBlock td h4,table.hierItemBlock td h5,table.hierItemBlock td h6,
 	padding: 0;
 	width: 50%;
 	vertical-align: top;
-/*	border-left: 1px solid orange;*/
 	padding-left:.2em
 }
 
@@ -928,8 +921,6 @@ tr.selectedFound td{
 
 .rosterImage{
 	border:1px solid #bbb;
-/* no height - so no distortion - adjust to a specific size if size known - otherwise leave as is
-height: 75px;*/
 	width:75px
 }
 
@@ -993,13 +984,12 @@ width:auto !important
 
 .portletTitle .title img{
 	margin: 0;
-/*	vertical-align: text-bottom;*/
 	width: 18px;
 	height: 16px;
 }
 
 .portletTitle .title{
-	padding: 15px 4px 15px 0px;/*added much more space around titles*/
+	padding: 15px 4px 15px 0px;
 	height: 1em;
 	font-size: 120%;
 	float: left;
@@ -1010,7 +1000,7 @@ width:auto !important
 	display: inline;
 	margin: 0 0 0 .2em;
 	padding: 0;
-	color: #343538;/*keeping consistency of colors*/
+	color: #343538;
 	font-weight: bold;
 	font-size: 1em;
 }
@@ -1024,7 +1014,7 @@ width:auto !important
 }
 
 .portletTitle .action{
-	padding: 15px 4px 15px 0px;/*made question mark align with text*/
+	padding: 15px 4px 15px 0px;
 	text-align: right;
 	vertical-align: middle;
 }
@@ -1128,10 +1118,6 @@ ul.makeMenu:hover{
 ul.makeMenu li {
   list-style-type: none;
   margin: 0px; 
-/*  padding:5px; 
-  position: relative;
-  color: #000000;
-  display:inline;*/
 }
 
 ul.makeMenu li > ul {
