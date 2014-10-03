@@ -8,6 +8,10 @@ body{
 	font-size: 80%;
 }	
 
+body a:link {
+	text-decoration: none !important;/*this has to be added to get rid of all underlines for the site*/
+}
+
 /*stub in tool_base.css - skinned here */
 
 hr.itemSeparator{
@@ -20,38 +24,38 @@ hr.itemSeparator{
 /*SECTION 2 LINKS*/
 a:link{
 	color: #001c3a;
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
-
 a:visited{
 	color: #001c3a;
-	text-decoration: underline !important;
+	font-size:120%;
+	text-decoration: none !important;
 }
 
 a:hover,a:active{
 	color: #c60;
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
 
 a:focus{
 	color: #c60;
-	text-decoration: underline !important;
+	text-decoration: none !important;
 }
 
 /*links inside the calendar tool tables*/
 table.calendar td a:hover{
-	text-decoration: underline;
+	text-decoration: none;
 }
 /*links inside the <th>  of the standard list table*/
 .listHier th a:link,.listHier th a:visited{
 	color: #001c3a;
-	text-decoration: underline;
+	text-decoration: none;
 	border: none;
 }
 
 .listHier th a:hover{
 	color: #c60;
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 /*some links are jscripted so the href is the same - cannot provide visited functionality - so make both the same*/
@@ -63,7 +67,7 @@ table.calendar td a:hover{
 
 .specialLink a:hover{
 	color: #c60;
-	text-decoration: underline;
+	text-decoration: none;
 }
 /*links in resources - selected for move*/
 tr.selectedMove a:link,tr.selectedMove a:visited{
@@ -99,7 +103,7 @@ tr.selectedMove a:link,tr.selectedMove a:visited{
 
 .itemAction  a:hover{
 	color: #27d; /*for ie*/
-	text-decoration: underline !important; 
+	text-decoration: none !important; 
 }
 
 html>body .itemAction  a:hover{
@@ -125,14 +129,18 @@ see: http://www.quirksmode.org/bugreports/archives/2005/07/Wrapped_inlinenowrap_
 .navIntraTool a, .navIntraTool a:link{
 	margin-right: .8em;
 	margin-bottom: .4em;
-	text-decoration: none !important;
 	white-space: nowrap;
-	display:inline-block;
-	padding-left: 2px;
-	padding-right: 2px;
-	background: #c6d2e1;
-	border: 1px solid #001c3a;
-	color: #001c3a;
+	display: inline-block;
+	padding: 0px 2px;
+	background: #343538;
+	border: 4px solid #343538;
+	color: #fff;
+	border-radius: 2px;
+	font-weight: 400;
+	transition: all 0.2s ease 0s;
+	-webkit-transition: all 0.2s ease 0s;
+	-o-transition: all 0.2s ease 0s;
+	-moz-transition: all 0.2s ease 0s;
 }
 
 .navIntraTool a:visited{
@@ -143,12 +151,16 @@ see: http://www.quirksmode.org/bugreports/archives/2005/07/Wrapped_inlinenowrap_
 }
 
 .navIntraTool a:hover{
+    margin-right: .8em;
+	margin-bottom: .4em;
+	white-space: nowrap;
+	display: inline-block;
+	padding: 0px 4px;
+	background: #343538;
+	border: 4px solid #343538;
 	color: #fff;
-	text-decoration: none;
-	border: 1px solid #001c3a;
-	background-color:#4a6594;
-	padding-left: 2px;
-	padding-right: 2px;
+	border-radius: 2px;
+	font-weight: 400;
 }
 
 .navIntraTool a:active{
@@ -378,12 +390,10 @@ table.calendar .event{
 /*skinned header of standard tab. data table*/
 .listHier th{
 	background-color: #eee;
-	border: 1px solid #999;
 }
 /*skinned cell of standard tab. data table*/
 .listHier td{
-	vertical-align: top;
-	padding: .4em;
+	padding: .8em;
 }
 
 /*lines - provides rules and hover effects on some tables*/
@@ -392,12 +402,23 @@ table.lines{
 }
 
 table.lines tr:hover{
-	background-color: #ffc;
+	background-color: #F8F8F8;
+}
+
+table.lines tr{
+	background-color: #fff;
+    transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
 }
 
 table.lines td{
-	border-bottom: 1px solid #bbb;
 	border-top: 1px solid #eee;
+	 transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
 }
 	
 /*some rows needed to be excluded from the rule and hover - see resources see other sites toggle*/
@@ -486,7 +507,6 @@ tr td.arrowHere{
 
 tr#selectedReorder td.arrowHere{
 /*	can give this an image if needed*/
-/*	background: url(images/arrowhere.gif) center .5em no-repeat*/
 }
 
 .moveUp, .moveDown{
@@ -530,10 +550,8 @@ h4,h5,h6 {
 }
 h3,h4,h5{ 
 	color: #555; 
-	padding: 0; 
 	font-weight: bold; 
 	font-family: Arial,Helvetica,sans-serif; 
-	margin: 1em 0 0 0; 
 	background-color: transparent !important; 
 } 
 
@@ -541,10 +559,10 @@ h3,h4,h5{
 /*want to make them look like normal text - but structure the content*/
 /*see: resources, any legacy list*/
 .listHier th h3,.listHier th h4,.listHier th h5,.listHier th h6,.listHier td h3,.listHier td h4,.listHier td h5,.listHier td h6{
-	margin: 0;
+	margin: 2% 0%;
 	padding: 0;
 	color:#000;
-	font-size: 1em;
+	font-size: 1.1em;
 	background: none;
 	font-weight: normal;
 	font-family: 'Trebuchet MS',Verdana,Geneva,Arial,Helvetica,sans-serif !important;
@@ -619,8 +637,6 @@ textarea:focus{
 	padding:0;
 	margin: 0;
 	line-height: 1.5em;
-	/* border-top:1px solid #eee; */
-	/* border-bottom:1px solid #eee; */
 	text-align: left;
 	font-size: .9em;
 	clear:both;
@@ -631,9 +647,10 @@ textarea:focus{
 * html .navIntraTool{
 	font-size:.85em;
 }
+
 .navIntraTool:hover{
-	/* border-bottom:1px solid silver; */
 }
+
 .navIntraTool .searchField{
 	border:1px solid silver;
 	font-family: Verdana,Geneva,Arial,Helvetica,sans-serif;
@@ -826,7 +843,6 @@ table.hierItemBlock td h4,table.hierItemBlock td h5,table.hierItemBlock td h6,
 	overflow: auto;
 	overflow-y: auto;
 	overflow-x: visible;
-	/* This overflow is for Netscape*/
 	overflow: -moz-scrollbars-vertical;
 }
 
@@ -895,7 +911,6 @@ table.hierItemBlock td h4,table.hierItemBlock td h5,table.hierItemBlock td h6,
 	padding: 0;
 	width: 50%;
 	vertical-align: top;
-/*	border-left: 1px solid orange;*/
 	padding-left:.2em
 }
 
@@ -906,8 +921,6 @@ tr.selectedFound td{
 
 .rosterImage{
 	border:1px solid #bbb;
-/* no height - so no distortion - adjust to a specific size if size known - otherwise leave as is
-height: 75px;*/
 	width:75px
 }
 
@@ -971,13 +984,12 @@ width:auto !important
 
 .portletTitle .title img{
 	margin: 0;
-/*	vertical-align: text-bottom;*/
 	width: 18px;
 	height: 16px;
 }
 
 .portletTitle .title{
-	padding: 2px 4px 6px 4px;
+	padding: 15px 4px 15px 0px;
 	height: 1em;
 	font-size: 120%;
 	float: left;
@@ -988,7 +1000,7 @@ width:auto !important
 	display: inline;
 	margin: 0 0 0 .2em;
 	padding: 0;
-	color: #555;
+	color: #343538;
 	font-weight: bold;
 	font-size: 1em;
 }
@@ -1002,7 +1014,7 @@ width:auto !important
 }
 
 .portletTitle .action{
-	padding: 2px 4px 6px 2px;
+	padding: 15px 4px 15px 0px;
 	text-align: right;
 	vertical-align: middle;
 }
@@ -1106,10 +1118,6 @@ ul.makeMenu:hover{
 ul.makeMenu li {
   list-style-type: none;
   margin: 0px; 
-/*  padding:5px; 
-  position: relative;
-  color: #000000;
-  display:inline;*/
 }
 
 ul.makeMenu li > ul {
